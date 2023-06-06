@@ -1,8 +1,8 @@
-package hot_100;
+package hot_100.hash;
 
 import java.util.*;
 
-public class LgroupAnagrams {
+public class MIshChen_groupAnagrams {
     int[]  words = new int[]{
             2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101
     };
@@ -40,8 +40,5 @@ public class LgroupAnagrams {
         }
         return new ArrayList<>(map.values());
     }
-    public static void main(String[] args){  
-        LgroupAnagrams question = new LgroupAnagrams();
-        System.out.println(question.groupAnagrams(new String[]{""}));
-    }
+
 }
