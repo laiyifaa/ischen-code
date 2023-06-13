@@ -5,10 +5,9 @@ public class reverseList {
     public ListNode reverseList(ListNode head) {
         if(null == head)
             return null;
-        ListNode p =  null;
         ListNode q = null;
         while(null != head.next){
-            p = head.next ;
+            ListNode p  = head.next ;
             head.next = q;
             q = head;
             head = p;
