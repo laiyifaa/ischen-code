@@ -28,3 +28,5 @@ Mxxxx:中等题
         b = a ^ b;//
         a = a ^ b;
 */
+byte[] used 数组做记录
+二分注意 l<r
