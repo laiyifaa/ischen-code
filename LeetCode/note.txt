@@ -30,3 +30,4 @@ Mxxxx:中等题
 */
 byte[] used 数组做记录
 二分注意 l<r
+map.getOrDefault(key,default) map.getOrDefault(preSum,0) 有则返回 否则返回0
