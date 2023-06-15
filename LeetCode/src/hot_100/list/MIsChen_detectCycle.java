@@ -1,9 +1,6 @@
 package hot_100.list;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+
 
 public class MIsChen_detectCycle {
     // tip1 : 简单map集合
