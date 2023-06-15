@@ -3,7 +3,7 @@ package hot_100.array;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MspiralOrder {
+public class MIsChen_spiralOrder {
 
     public List<Integer> spiralOrder(int[][] matrix) {
         int m = matrix.length;
@@ -37,12 +37,5 @@ public class MspiralOrder {
         }
         return list;
     }
-    public static void main(String[] args){
-        MspiralOrder q = new MspiralOrder();
-        q.spiralOrder(new int[][]{
-                {1,2,3,4},
-                {5,6,7,8},
-                {9,10,11,12}
-        });
-    }
+
 }
