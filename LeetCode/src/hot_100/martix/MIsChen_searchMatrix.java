@@ -20,6 +20,7 @@ public class MIsChen_searchMatrix {
         }
         return false;
     }*/
+    
     public boolean searchMatrix(int[][] matrix, int target) {
         if(null == matrix || null == matrix[0]){
             return false;
