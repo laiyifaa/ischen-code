@@ -32,4 +32,4 @@ byte[] used 数组做记录
 二分注意 l<r l<=r l-1
 map.getOrDefault(key,default) map.getOrDefault(preSum,0) 有则返回 否则返回0
 查找 还有Z字型查找 MIsChen_searchMatrix leetcode 240.
-
+链表 快慢指针 颠倒 递归
