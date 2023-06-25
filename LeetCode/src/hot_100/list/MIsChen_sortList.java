@@ -1,6 +1,6 @@
 package hot_100.list;
 
-public class MsortList {
+public class MIsChen_sortList {
 
     public ListNode sortList(ListNode head) {
         if(null == head || null == head.next)
@@ -42,17 +42,5 @@ public class MsortList {
             cur.next = list1;
         }
         return  l3.next;
-    }
-    public static void main(String[] args){  
-        ListNode x = new ListNode(4);
-        x.next = new ListNode(2);
-        x.next.next = new ListNode(1);
-        x.next.next.next = new ListNode(3);
-        MsortList q = new MsortList();
-        ListNode y = q.sortList(x);
-        while(y != null){
-            System.out.println(y.val);
-            y = y.next;
-        }
     }
 }
