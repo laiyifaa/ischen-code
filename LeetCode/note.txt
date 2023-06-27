@@ -28,6 +28,7 @@ Mxxxx:中等题
         b = a ^ b;//
         a = a ^ b;
 */
+前置++效率比后置++高 即++a > a++
 byte[] used 数组做记录
 二分注意 l<r l<=r l-1
 map.getOrDefault(key,default) map.getOrDefault(preSum,0) 有则返回 否则返回0
