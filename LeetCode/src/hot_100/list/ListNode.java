@@ -7,5 +7,12 @@ public class ListNode {
         val = x;
         next = null;
     }
+    void print(){
+        ListNode x = this;
+        while (null != x){
+            System.out.println(x.val);
+            x = x.next;
+        }
+    }
 }
 
