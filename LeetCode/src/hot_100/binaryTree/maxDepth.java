@@ -1,6 +1,7 @@
 package hot_100.binaryTree;
 
 public class maxDepth {
+    //104. 二叉树的最大深度
     public int maxDepth(TreeNode root) {
         if(null == root)
             return 0;
