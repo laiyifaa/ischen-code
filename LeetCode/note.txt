@@ -35,3 +35,9 @@ map.getOrDefault(key,default) map.getOrDefault(preSum,0) 有则返回 否则返�
 查找 还有Z字型查找 MIsChen_searchMatrix leetcode 240.
 链表 快慢指针（quick slow,quick!=null && quick.next!=null ->>> slow = slow.next quick = quick.next.next） 颠倒(reverse) 递归(思维) 归并(merge)
 
+优先队列 leetcode23.    Queue<ListNode> pq = new PriorityQueue<>(new Comparator<ListNode>() {
+                            @Override
+                            public int compare(ListNode o1, ListNode o2) {
+                                return o1.val-o2.val;
+                            }
+                        });
