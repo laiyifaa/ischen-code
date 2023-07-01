@@ -19,6 +19,7 @@ public class MkthSmallest {
 
     }
     //230. 二叉搜索树中第K小的元素 中序遍历 找到第K个就结束
+
     public int kthSmallest(TreeNode root, int k) {
         ans = -1;
         _k = k;
