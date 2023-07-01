@@ -41,3 +41,14 @@ map.getOrDefault(key,default) map.getOrDefault(preSum,0) 有则返回 否则返�
                                 return o1.val-o2.val;
                             }
                         });
+二叉树的层序遍历102 199
+   while(!queue.isEmpty()){
+            int count = queue.size();
+            //cntList = new LinkedList<>();
+            cntList.clear();
+            while (count>0){
+                --count;
+
+                xxxxx
+            }
+        }
