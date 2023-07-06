@@ -2,7 +2,6 @@ package hot_100.child_string;
 
 
 public class HminWindow {
-
     private void fill_p(String x,int l,int r,int[] nums){
         for(int i = l;i<=r;++i){
             ++nums[x.charAt(i)];
@@ -30,14 +29,14 @@ public class HminWindow {
         int[] usedS = new int[128];
         fill_p(t,0,n-1,usedT);
         int l = 0;
-        int r = n-1;
+        int r = 0;
         int minLen = Integer.MAX_VALUE;
         int minL = 0;
         int minR = -1;
-        fill_p(s,l,r,usedS);
         while (true){
-            if(r>=m ||(r - l +1)<n)
+            if(r>=m )
                 break;
+            ++usedS[s.charAt(r++)];
             while (check(usedS,usedT)){
                 if((r - l +1)<minLen){
                     minLen = r - l +1;
@@ -46,18 +45,13 @@ public class HminWindow {
                 }
                 --usedS[s.charAt(l++)];
             }
-            ++r;
-            if(r>=m)
-                break;
-            ++usedS[s.charAt(r)];
-
         }
         if(minR>=minL)
-            ans =  s.substring(minL,minR+1);
+            ans =  s.substring(minL,minR);
         return ans;
     }
     public static void main(String[] args){
         HminWindow q = new HminWindow();
-        System.out.println(q.minWindow("bdab","ab"));
+        System.out.println(q.minWindow("ADOBECODEBANC","ABC"));
     }
 }
