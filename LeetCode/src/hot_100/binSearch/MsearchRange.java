@@ -15,9 +15,9 @@ public class MsearchRange {
             }
         }
         if(l<0)
-            l = 0;
+            return 0;
         if(l>=nums.length)
-            l = nums.length-1;
+            return nums.length-1;
         return l;
     }
     //34. 在排序数组中查找元素的第一个和最后一个位置
@@ -26,23 +26,18 @@ public class MsearchRange {
         if(null == nums || 0 == nums.length)
             return ans;
         int index = binSearch(nums,target - 1);
-        while (index<nums.length-1&&nums[index]<target){
+        while (index<nums.length-1&&nums[index]<target)
             ++index;
-        }
-        if( nums[index] != target)
-            index = -1;
-        ans[0] = index;
+        ans[0] = nums[index]!=target?-1:index;
         index = binSearch(nums,target + 1);
         while (index>0&&nums[index]>target)
             --index;
-        if( nums[index] != target)
-            index = -1;
-        ans[1] = index;
+        ans[1] = nums[index]!=target?-1:index;
         return ans;
     }
     public static void main(String[] args){  
         int[] a = new int[]{6,8,8,8,8,8,8,8,8,11};
         MsearchRange q = new MsearchRange();
-        q.searchRange(new int[]{-99999},0);
+        q.searchRange(new int[]{1},0);
     }
 }
