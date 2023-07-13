@@ -3,10 +3,7 @@ package hot_100.binaryTree;
 
 public class HmaxPathSum {
     int ans = Integer.MIN_VALUE;
-<<<<<<< Updated upstream
-=======
     //124. 二叉树中的最大路径和
->>>>>>> Stashed changes
     public int maxPathSum(TreeNode root) {
         if(null == root)
             return 0;
