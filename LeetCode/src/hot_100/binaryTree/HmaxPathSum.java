@@ -1,22 +1,13 @@
 package hot_100.binaryTree;
 
-import java.util.Comparator;
-import java.util.PriorityQueue;
-import java.util.Queue;
 
 public class HmaxPathSum {
-    Queue<Integer> queue ;
+    int ans = Integer.MIN_VALUE;
     public int maxPathSum(TreeNode root) {
         if(null == root)
             return 0;
-        queue = new PriorityQueue<>(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer o1, Integer o2) {
-                return o2-o1;
-            }
-        });
-        queue.add(dfs(root));
-        return queue.peek();
+       int temp =  dfs(root);
+        return temp>ans?temp:ans;
     }
     private int dfs(TreeNode root){
         if(null == root)
@@ -26,11 +17,8 @@ public class HmaxPathSum {
         int MLMax = root.val + lMax;
         int MRMax = root.val + rMax;
         int LMRMax  = MLMax + rMax;
-        queue.add(lMax);
-        queue.add(rMax);
-        queue.add(MLMax);
-        queue.add(MRMax);
-        queue.add(LMRMax);
+        ans = Math.max(ans,Math.max(LMRMax,Math.max(lMax,rMax)));
+/*        ans = Math.max(ans,root.val);*/
         return Math.max(root.val,Math.max(MLMax,MRMax));
     }
     public static void main(String[] args){
