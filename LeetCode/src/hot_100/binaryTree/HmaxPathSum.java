@@ -3,6 +3,7 @@ package hot_100.binaryTree;
 
 public class HmaxPathSum {
     int ans = Integer.MIN_VALUE;
+    //124
     public int maxPathSum(TreeNode root) {
         if(null == root)
             return 0;
