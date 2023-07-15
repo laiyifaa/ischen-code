@@ -7,7 +7,7 @@ public class MsortColors {
         nums[j] = temp;
 
     }
-    //75. 颜色分类 滑动窗口 
+    //75. 颜色分类 滑动窗口
     public void sortColors(int[] nums) {
         if(null == nums || 0 == nums.length)
             return;
