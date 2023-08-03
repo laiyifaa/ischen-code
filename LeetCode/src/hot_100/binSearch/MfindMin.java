@@ -1,6 +1,7 @@
 package hot_100.binSearch;
 
 public class MfindMin {
+    //153. 寻找旋转排序数组中的最小值
     public int findMin(int[] nums) {
         if(null == nums || 0 == nums.length)
             return 0;
@@ -17,11 +18,5 @@ public class MfindMin {
             }
         }
         return nums[l];
-    }
-    public static void main(String[] args){
-        MfindMin q = new MfindMin();
-        System.out.println(q.findMin(new int[]{3,4,5,1,2}));
-        System.out.println(q.findMin(new int[]{4,5,6,7,0,1,2}));
-        System.out.println(q.findMin(new int[]{11,13,15,17}));
     }
 }
