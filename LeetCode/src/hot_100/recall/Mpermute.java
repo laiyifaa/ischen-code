@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Mpermute {
-
+    //46 全排列
     List<List<Integer>> ansList ;
     public List<List<Integer>> permute(int[] nums) {
         ansList = new ArrayList<>(getMult(nums.length));
