@@ -3,6 +3,8 @@ package hot_100.stack;
 import java.util.LinkedList;
 
 public class MinStack {
+
+    //155. 最小栈
     LinkedList<Integer> stack;
     LinkedList<Integer> minStack;
     public MinStack() {
