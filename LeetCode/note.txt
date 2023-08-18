@@ -30,11 +30,12 @@ Mxxxx:中等题
 */
 前置++效率比后置++高 即++a > a++
 byte[] used 数组做记录
-二分注意 l<r l<=r l-1
+二分注意 l<r l<=r(lai) l-1
 26个字母 = 26个素数
 map.getOrDefault(key,default) map.getOrDefault(preSum,0) 有则返回 否则返回0
 查找 还有Z字型查找 MIsChen_searchMatrix leetcode 240.
-链表 快慢指针（quick slow,quick!=null && quick.next!=null ->>> slow = slow.next quick = quick.next.next） 颠倒(reverse) 递归(思维) 归并(merge)
+链表 快慢指针（quick slow,quick!=null && quick.next!=null ->>> slow = slow.next quick = quick.next.next）
+颠倒(reverse) 递归(思维) 归并(merge)
 
 优先队列 leetcode23.    Queue<ListNode> pq = new PriorityQueue<>(new Comparator<ListNode>() {
                             @Override
@@ -53,7 +54,7 @@ map.getOrDefault(key,default) map.getOrDefault(preSum,0) 有则返回 否则返�
                 xxxxx
             }
         }
-单调队列 单调栈 239 42
+单调队列 单调栈 239 42 739  84  初始栈可加入-1 参考84
 找众数 投票法 169. 多数元素 且数字大于n/2
 分治：33
 回溯：全排列46
