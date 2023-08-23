@@ -14,7 +14,7 @@ public class MtopKFrequent {
         }
     }
     //347. 前 K 个高频元素
-    //优先队列
+    //优先队列 + 堆排序
     public int[] topKFrequent(int[] nums, int k) {
         if(null == nums || nums.length == 0){
             return  new int[]{};
