@@ -4,7 +4,7 @@ public class Mjump {
 
     //45. 跳跃游戏 II
     public int jump(int[] nums) {
-        if(null == nums || nums.length == 0 || nums.length == 0)
+        if(null == nums || nums.length == 0 || nums.length == 1)
             return 0;
         int cnt = 1;
         int i = 0;
@@ -20,8 +20,6 @@ public class Mjump {
                 }
             }
             ++cnt;
-            if(nums[maxi] + maxi >= nums.length - 1)
-                return cnt;
             i = maxi;
         }
         return cnt;
