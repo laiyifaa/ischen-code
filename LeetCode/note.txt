@@ -64,3 +64,4 @@ map.getOrDefault(key,default) map.getOrDefault(preSum,0) 有则返回 否则返�
     BigDecimal bd = new BigDecimal(num);
     num = bd.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
     System.out.println(num);
+// String StringBuilder StringBuffer(并发)
