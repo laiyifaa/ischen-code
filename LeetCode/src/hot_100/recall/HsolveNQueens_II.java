@@ -62,6 +62,6 @@ public class HsolveNQueens_II {
         dfs(0);
         return ans;
     }
- 
+
 
 }
