@@ -65,3 +65,16 @@ map.getOrDefault(key,default) map.getOrDefault(preSum,0) 有则返回 否则返�
     num = bd.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
     System.out.println(num);
 // String StringBuilder StringBuffer(并发)
+
+//快速幂 c++
+int qpow(int a, int n){
+    int ans = 1;
+    while(n){
+        if(n&1)        //如果n的当前末位为1
+            ans *= a;  //ans乘上当前的a
+        a *= a;        //a自乘
+        n >>= 1;       //n往右移一位
+    }
+    return ans;
+}
+
