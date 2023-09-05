@@ -36,7 +36,7 @@ map.getOrDefault(key,default) map.getOrDefault(preSum,0) 有则返回 否则返�
 查找 还有Z字型查找 MIsChen_searchMatrix leetcode 240.
 链表 快慢指针（quick slow,quick!=null && quick.next!=null ->>> slow = slow.next quick = quick.next.next）
 颠倒(reverse) 递归(思维) 归并(merge)
-
+栈和队列用linkedlist
 优先队列(堆 heap) leetcode23.    Queue<ListNode> pq = new PriorityQueue<>(new Comparator<ListNode>() {
                             @Override
                             public int compare(ListNode o1, ListNode o2) {
@@ -77,4 +77,39 @@ int qpow(int a, int n){
     }
     return ans;
 }
-
+// 01背包 完全背包 多重背包
+w[]重量数组 c[]花费数组 s[]数量数组
+dp[][]
+dp[]
+--01背包
+for(int i = 1;i<=n;++i){
+    for(int j = 1;j<=m;++j){
+        if(j < w[i]){
+            dp[i][j] = dp[i-1][j];
+        }
+        else { 拿/不拿
+            dp[i][j] = max(dp[i-1][j],dp[i-1][j - w[i]] + c[i])
+        }
+    }
+}
+for(int i = 1;i<=n;++i){
+    for(int j = m;j>=1;--j){
+         if(j >= w[i])
+         dp[j] = max(dp[j],[j - w[i]] + c[i])
+    }
+}
+--完全背包
+for(int i = 1;i<=n;++i){
+    for(int j = w[i];j<=m;++j){
+         if(j >= w[i])
+         dp[j] = max(dp[j],[j - w[i]] + c[i])
+    }
+}
+--多重背包
+for(int i = 1;i<=n;++i){
+    for(int j = m;j>=1;--j){
+       for(int k = 0; k <=s[i] && j >= k * w[i];++k){
+            dp[j] = max(dp[j],dp[j - k * w[i]] + k * c[i]);
+       }
+    }
+}
