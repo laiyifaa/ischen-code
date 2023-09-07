@@ -60,11 +60,7 @@ public class HfindSubstring {
                 clear(used,windows);
                 continue;
             }
-            if(cntLen == 0){
-                i += 1;
-            }else{
-                i += wordLen;
-            }
+            i += wordLen;
         }
         return ans;
     }
