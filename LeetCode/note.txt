@@ -65,6 +65,8 @@ map.getOrDefault(key,default) map.getOrDefault(preSum,0) 有则返回 否则返�
     num = bd.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
     System.out.println(num);
 // String StringBuilder StringBuffer(并发)
+反复new String 不如 new StringBUilder 如果能 记录 l,r 不如 s.subString(l,r+1)
+
 
 //快速幂 c++
 int qpow(int a, int n){
