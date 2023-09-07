@@ -3,7 +3,6 @@ package hot_100.dp.mult_dp;
 public class MlongestPalindrome {
 
     int ansLen ;
-    StringBuilder ans;
     int L;
     int R;
     private void fun(int l,int r,String s){
@@ -31,7 +30,6 @@ public class MlongestPalindrome {
         if(s.length() == 1)
             return s;
         ansLen = 0;
-        ans = new StringBuilder();
         for(int i = 0;i< s.length();++i){
             int r = i;
             while ((r + 1)<s.length() && s.charAt(r) == s.charAt(r + 1)){
