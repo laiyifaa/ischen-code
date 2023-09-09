@@ -4,114 +4,119 @@ D:difficulty
 
 Ischen:good question
 
-
 example :
-
-
 IschenMxxxxxxx:中等难度的好题
 Dxxxx:难题
 Mxxxx:中等题
 }
 
- java 中int 的范围 简介 int的取值范围为： -2^31——2^31-1，即-2147483648——2147483647  1e10
 
- long  -9223372036854774808~9223372036854774807  1e19
-/**
-      *
-      *  swap
-      * a = a + b;
-        b = a - b;
-        a = a - b;
+tips:
 
-       (仅限整数）
-        a = a ^ b;//^异或运算
-        b = a ^ b;//
-        a = a ^ b;
-*/
-前置++效率比后置++高 即++a > a++
-byte[] used 数组做记录
-二分注意 l<r l<=r(lai) l-1
-26个字母 = 26个素数
-map.getOrDefault(key,default) map.getOrDefault(preSum,0) 有则返回 否则返回0
-查找 还有Z字型查找 MIsChen_searchMatrix leetcode 240.
-链表 快慢指针（quick slow,quick!=null && quick.next!=null ->>> slow = slow.next quick = quick.next.next）
-颠倒(reverse) 递归(思维) 归并(merge)
-栈和队列用linkedlist
-优先队列(堆 heap) leetcode23.    Queue<ListNode> pq = new PriorityQueue<>(new Comparator<ListNode>() {
-                            @Override
-                            public int compare(ListNode o1, ListNode o2) {
-                                return o1.val-o2.val;
-                            }
-                        });
-二叉树的层序遍历102 199 994
-   while(!queue.isEmpty()){
-            int count = queue.size();
-            //cntList = new LinkedList<>();
-            cntList.clear();
-            while (count>0){
-                --count;
+             java 中int 的范围 简介 int的取值范围为： -2^31——2^31-1，即-2147483648——2147483647  1e10
 
-                xxxxx
+             long  -9223372036854774808~9223372036854774807  1e19
+            /**
+                  *
+                  *  swap
+                  * a = a + b;
+                    b = a - b;
+                    a = a - b;
+
+                   (仅限整数）
+                    a = a ^ b;//^异或运算
+                    b = a ^ b;//
+                    a = a ^ b;
+            */
+            前置++效率比后置++高 即++a > a++
+            byte[] used 数组做记录
+            二分注意 l<r l<=r(lai) l-1
+            26个字母 = 26个素数
+
+            查找 还有Z字型查找 MIsChen_searchMatrix leetcode 240.
+
+            找众数 投票法 169. 多数元素 且数字大于n/2
+            分治：33
+            回溯：全排列46
+            //保留2位小数
+                double num = 3.1415926;
+                BigDecimal bd = new BigDecimal(num);
+                num = bd.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
+                System.out.println(num);
+            // String StringBuilder StringBuffer(并发)
+            反复new String 不如 new StringBUilder 如果能 记录 l,r 不如 s.subString(l,r+1)
+数据结构 ：
+            字典树 208. 实现 Trie (前缀树)
+            map.getOrDefault(key,default) map.getOrDefault(preSum,0) 有则返回 否则返回0
+            链表 快慢指针（quick slow,quick!=null && quick.next!=null ->>> slow = slow.next quick = quick.next.next）
+            颠倒(reverse) 递归(思维) 归并(merge)
+            栈和队列用linkedlist
+            优先队列(堆 heap) leetcode23.    Queue<ListNode> pq = new PriorityQueue<>(new Comparator<ListNode>() {
+                                        @Override
+                                        public int compare(ListNode o1, ListNode o2) {
+                                            return o1.val-o2.val;
+                                        }
+                                    });
+            二叉树的层序遍历102 199 994
+               while(!queue.isEmpty()){
+                        int count = queue.size();
+                        //cntList = new LinkedList<>();
+                        cntList.clear();
+                        while (count>0){
+                            --count;
+
+                            xxxxx
+                        }
+                    }
+            注意初始的默认插入 0 -1 这些。
+            单调队列 单调栈 239 42 739  84  32 初始栈可加入-1 参考84
+
+//快速幂 c++ 70. 爬楼梯
+            int qpow(int a, int n){
+                int ans = 1;
+                while(n){
+                    if(n&1)        //如果n的当前末位为1
+                        ans *= a;  //ans乘上当前的a
+                    a *= a;        //a自乘
+                    n >>= 1;       //n往右移一位
+                }
+                return ans;
             }
-        }
-注意初始的默认插入 0 -1 这些。
-单调队列 单调栈 239 42 739  84  32 初始栈可加入-1 参考84
-找众数 投票法 169. 多数元素 且数字大于n/2
-分治：33
-回溯：全排列46
-//保留2位小数
-    double num = 3.1415926;
-    BigDecimal bd = new BigDecimal(num);
-    num = bd.setScale(2, BigDecimal.ROUND_HALF_UP).doubleValue();
-    System.out.println(num);
-// String StringBuilder StringBuffer(并发)
-反复new String 不如 new StringBUilder 如果能 记录 l,r 不如 s.subString(l,r+1)
 
-
-//快速幂 c++
-int qpow(int a, int n){
-    int ans = 1;
-    while(n){
-        if(n&1)        //如果n的当前末位为1
-            ans *= a;  //ans乘上当前的a
-        a *= a;        //a自乘
-        n >>= 1;       //n往右移一位
-    }
-    return ans;
-}
-// 01背包 完全背包 多重背包
-w[]重量数组 c[]花费数组 s[]数量数组
-dp[][]
-dp[]
---01背包
-for(int i = 1;i<=n;++i){
-    for(int j = 1;j<=m;++j){
-        if(j < w[i]){
-            dp[i][j] = dp[i-1][j];
-        }
-        else { 拿/不拿
-            dp[i][j] = max(dp[i-1][j],dp[i-1][j - w[i]] + c[i])
-        }
-    }
-}
-for(int i = 1;i<=n;++i){
-    for(int j = m;j>=1;--j){
-         if(j >= w[i])
-         dp[j] = max(dp[j],[j - w[i]] + c[i])
-    }
-}
---完全背包
-for(int i = 1;i<=n;++i){
-    for(int j = w[i];j<=m;++j){
-         if(j >= w[i])
-         dp[j] = max(dp[j],[j - w[i]] + c[i])
-    }
-}
---多重背包
-for(int i = 1;i<=n;++i){
-    for(int j = m;j>=1;--j){
-       for(int k = 0; k <=s[i] && j >= k * w[i];++k){
-            dp[j] = max(dp[j],dp[j - k * w[i]] + k * c[i]);
-       }
-    }
-}
+dp:
+            // 01背包 完全背包 多重背包
+            w[]重量数组 c[]花费数组 s[]数量数组
+            dp[][]
+            dp[]
+            --01背包
+            for(int i = 1;i<=n;++i){
+                for(int j = 1;j<=m;++j){
+                    if(j < w[i]){
+                        dp[i][j] = dp[i-1][j];
+                    }
+                    else { 拿/不拿
+                        dp[i][j] = max(dp[i-1][j],dp[i-1][j - w[i]] + c[i])
+                    }
+                }
+            }
+            for(int i = 1;i<=n;++i){
+                for(int j = m;j>=1;--j){
+                     if(j >= w[i])
+                     dp[j] = max(dp[j],[j - w[i]] + c[i])
+                }
+            }
+            --完全背包
+            for(int i = 1;i<=n;++i){
+                for(int j = w[i];j<=m;++j){
+                     if(j >= w[i])
+                     dp[j] = max(dp[j],[j - w[i]] + c[i])
+                }
+            }
+            --多重背包
+            for(int i = 1;i<=n;++i){
+                for(int j = m;j>=1;--j){
+                   for(int k = 0; k <=s[i] && j >= k * w[i];++k){
+                        dp[j] = max(dp[j],dp[j - k * w[i]] + k * c[i]);
+                   }
+                }
+            }
