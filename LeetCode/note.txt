@@ -120,3 +120,9 @@ dp:
                    }
                 }
             }
+//数学 gcd函数
+    private int  gcd(int a, int b){
+        if(b==0){
+            return a;}
+        return gcd(b,a%b);
+    }
