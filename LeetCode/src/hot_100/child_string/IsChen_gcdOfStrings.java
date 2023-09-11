@@ -32,5 +32,5 @@ public class IsChen_gcdOfStrings {
             return a;}
         return gcd(b,a%b);
     }
- 
+
 }
