@@ -1,4 +1,4 @@
-package hot_100.greedy;
+package hot_100.array;
 
 public class MincreasingTriplet {
     //334. 递增的三元子序列
