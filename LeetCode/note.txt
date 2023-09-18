@@ -48,7 +48,7 @@ tips:
             // String StringBuilder StringBuffer(并发)
             反复new String 不如 new StringBUilder 如果能 记录 l,r 不如 s.subString(l,r+1)
 数据结构 ：
-            字典树 208. 实现 Trie (前缀树)
+            字典树 2352. 相等行列对 208. 实现 Trie (前缀树)
             map.getOrDefault(key,default) map.getOrDefault(preSum,0) 有则返回 否则返回0
             链表 快慢指针（quick slow,quick!=null && quick.next!=null ->>> slow = slow.next quick = quick.next.next）
             颠倒(reverse) 递归(思维) 归并(merge)
@@ -109,7 +109,37 @@ dp:
             }
             --完全背包
             for(int i = 1;i<=n;++i){
-                for(int j = w[i];j<=m;++j){
+                for(int j = w[i];j<=m;++j){ public int equalPairs(int[][] grid) {
+                                                       //前缀字典树
+                                                       int n=grid.length;
+                                                       int ans=0;
+                                                       Node root=new Node();
+                                                       for(int j=0;j<n;j++){
+                                                           Node node=root;
+                                                           for(int i=0;i<n;i++){
+                                                               int num=grid[i][j];
+                                                               Node next=node.map.get(num);
+                                                               if(next==null)node.map.put(num,new Node());
+                                                               node=node.map.get(num);
+                                                           }
+                                                           node.count++;
+                                                       }
+                                                       for(int i=0;i<n;i++){
+                                                           Node node=root;
+                                                           for(int j=0;j<n;j++){
+                                                               int num=grid[i][j];
+                                                               if(node.map.get(num)==null)break;
+                                                               node=node.map.get(num);
+                                                           }
+                                                           ans+=node.count;
+                                                       }
+                                                       return ans;
+                                                   }
+                                                   class Node{
+                                                       Map<Integer,Node> map=new HashMap<>();
+                                                       int count;
+
+                                                   }
                      if(j >= w[i])
                      dp[j] = max(dp[j],[j - w[i]] + c[i])
                 }
