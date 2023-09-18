@@ -128,4 +128,4 @@ dp:
             return a;}
         return gcd(b,a%b);
     }
-//滑动窗口 int l = 0; int r = 0;int k = ? 1004. 最大连续1的个数 III
+//滑动窗口(反转数据 求最长连续) int l = 0; int r = 0;int k = ? 1004. 最大连续1的个数 III
