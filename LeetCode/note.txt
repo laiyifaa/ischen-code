@@ -48,6 +48,8 @@ tips:
             // String StringBuilder StringBuffer(并发)
             反复new String 不如 new StringBUilder 如果能 记录 l,r 不如 s.subString(l,r+1)
 数据结构 ：
+
+            循环队列 649. Dota2 参议院
             字典树 2352. 相等行列对 208. 实现 Trie (前缀树)
             map.getOrDefault(key,default) map.getOrDefault(preSum,0) 有则返回 否则返回0
             链表 快慢指针（quick slow,quick!=null && quick.next!=null ->>> slow = slow.next quick = quick.next.next）
