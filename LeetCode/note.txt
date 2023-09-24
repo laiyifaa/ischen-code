@@ -56,7 +56,7 @@ tips:
             链表 快慢指针（quick slow,quick!=null && quick.next!=null ->>> slow = slow.next quick = quick.next.next）
             颠倒(reverse) 递归(思维) 归并(merge)
             栈和队列用linkedlist
-            优先队列(堆 heap) leetcode23.    Queue<ListNode> pq = new PriorityQueue<>(new Comparator<ListNode>() {
+            优先队列(堆 heap) leetcode215/23.    Queue<ListNode> pq = new PriorityQueue<>(new Comparator<ListNode>() {
                                         @Override
                                         public int compare(ListNode o1, ListNode o2) {
                                             return o1.val-o2.val;
