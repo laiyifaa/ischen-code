@@ -4,26 +4,21 @@ import java.util.*;
 
 public class MSmallestInfiniteSet {
     PriorityQueue<Integer> pq;
-    Map<Integer,Boolean> map;
     //2336. 无限集中的最小数字
     public MSmallestInfiniteSet() {
         pq = new PriorityQueue<>();
-        map = new HashMap<>();
         for(int i = 1;i<=1000;++i){
             pq.add(i);
-            map.put(i,true);
         }
     }
 
     public int popSmallest() {
         Integer top = pq.poll();
-        map.put(top,false);
         return top;
     }
 
     public void addBack(int num) {
-        if( !map.get(num)  ){
-            map.put(num,true);
+        if( !pq.contains(num)  ){
             pq.add(num);
         }
     }
