@@ -19,14 +19,11 @@ public class MtotalCost {
     public long totalCost(int[] costs, int k, int candidates) {
         if(null == costs || costs.length == 0)
             return 0l;
-        PriorityQueue<Node> pq = new PriorityQueue<>(new Comparator<Node>() {
-            @Override
-            public int compare(Node o1, Node o2) {
-                if(o1.val == o2.val){
-                    return o1.index - o2.index;
-                }
-                return o1.val - o2.val;
+        PriorityQueue<Node> pq = new PriorityQueue<>((o1, o2) -> {
+            if(o1.val == o2.val){
+                return o1.index - o2.index;
             }
+            return o1.val - o2.val;
         });
         int l = 0;
         int r = costs.length - 1;
