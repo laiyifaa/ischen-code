@@ -33,6 +33,8 @@ tips:
             二分注意 l<r l<=r(lai) l-1
             26个字母 = 26个素数
 
+            排序后保留原来索引 leetcode 2542. 最大子序列的分数
+
             查找 还有Z字型查找 MIsChen_searchMatrix leetcode 240.
 
             数组可以开左右数组  334. 递增的三元子序列
