@@ -17,7 +17,7 @@ public class MminDays {
         while (l<=r){
             int mid = l + (r - l)/2;
             long temp = getFlowers(bloomDay,mid,k);
-            if(temp >= m ){
+            if(temp  >= m ){
                 r = mid - 1;
             }else l = mid + 1;
         }
