@@ -30,7 +30,7 @@ tips:
             */
             前置++效率比后置++高 即++a > a++
             byte[] used 数组做记录
-            二分注意 l<r l<=r(lai) l-1 ,二分可能还需要 while()｛++l｝;
+            二分注意 l<r l<=r(lai) ｛ if（a[mid] > k） l = mid +1 else r = mid -1 ｝ l-1 ,
             26个字母 = 26个素数
 
             排序后保留原来索引 leetcode 2542. 最大子序列的分数
