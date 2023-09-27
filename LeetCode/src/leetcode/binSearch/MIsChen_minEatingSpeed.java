@@ -16,7 +16,7 @@ public class MIsChen_minEatingSpeed {
             long temp = getTimes(piles,mid);
             if(temp > h){
                l = mid + 1;
-            }else {
+            }else  {
                 r = mid - 1;
             }
         }
