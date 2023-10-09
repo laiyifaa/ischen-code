@@ -1,8 +1,8 @@
-package leetcode.graph;
+package leetcode.sum;
 
 public class Trie {
     class Node{
-        boolean isword;
+        boolean isword = false;
         Node[] childrens = new Node[26];
     }
     Node root;
