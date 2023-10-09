@@ -1,7 +1,7 @@
 package leetcode.skill;
 
 import java.util.LinkedList;
-import java.util.List;
+
 
 public class MminFlips {
     //1318. 或运算的最小翻转次数
