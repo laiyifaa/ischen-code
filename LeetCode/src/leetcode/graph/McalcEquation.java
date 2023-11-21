@@ -7,157 +7,57 @@ import java.util.Map;
 
 public class McalcEquation {
     //399. 除法求值
-    Map<String,Integer> map;
-    Map<String,Integer> dict;
-    int pointCnt ;
+    private int pointCnt;
     public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
-        map = new HashMap<>(equations.size());
-        dict = new HashMap<>(equations.size());
+        double ans[] = new double[queries.size()];
         pointCnt = 0;
-        double[][] matrix = getMap(equations,values);
-        double[] ans = getAns(queries,matrix);
-        return ans;
-    }
-
-    private double[] getAns(List<List<String>> queries,double[][] matrix) {
-        double[] ans = new double[queries.size()];
-        int cnt = 0;
-        for(List<String> sList : queries){
-            String start = sList.get(0);
-            String end = sList.get(1);
-            Integer[] temp = getXandY(start, end);
-            Integer x = temp[0];
-            Integer y = temp[1];
-            if(x == -1 || y == -1){
-                ans[cnt++] = -1;
-                continue;
+        Map<String,Integer> map = new HashMap<>(equations.size());
+        for (List<String> equation : equations) {
+            if (!map.containsKey(equation.get(0))) {
+                map.put(equation.get(0), pointCnt++);
             }
-            if(x == y){
-                ans[cnt++] = 1;
-                continue;
+            if (!map.containsKey(equation.get(1))) {
+                map.put(equation.get(1), pointCnt++);
             }
-            if(matrix[x][y] == -1){
-                ans[cnt++] = -1;
-            }else {
-                ans[cnt++] = matrix[x][y];
-            }
-
         }
-        return ans;
-    }
-
-    private double[][] getMap(List<List<String>> equations, double[] values) {
-        for(List<String> sList : equations){
-            String start = sList.get(0);
-            String end = sList.get(1);
-            dict.put(start,1);
-            dict.put(end,1);
-            addMap(start,end);
-        }
-        int i;
         double[][] matrix = new double[pointCnt][pointCnt];
-        for( i = 0;i < pointCnt;++i){
-            for(int j = 0;j < pointCnt;++j)
+        for(int i = 0;i < pointCnt;++i){
+            for(int j = 0; j < pointCnt;++j){
                 matrix[i][j] = -1;
-            matrix[i][i] = 1.0;
+            }
+            matrix[i][i] = 1;
         }
-        i = 0;
-        for(List<String> sList : equations){
-            String start = sList.get(0);
-            String end = sList.get(1);
-            Integer[] temp = getXandY(start, end);
-            matrix[temp[0]][temp[1]] = values[i];
-            matrix[temp[1]][temp[0]] = 1/values[i++];
+        for(int i = 0;i < values.length;++i){
+            String a = equations.get(i).get(0);
+            String b = equations.get(i).get(1);
+            matrix[map.get(a)][map.get(b)] = values[i];
+            matrix[map.get(b)][map.get(a)] = 1.0/values[i];
         }
-        //floyd
-        for(int k = 0 ; k < pointCnt;++k){
-            for(i = 0; i < pointCnt;++i){
-                for(int j = 0; j < pointCnt;++j){
+        for(int k = 0; k < pointCnt;++k){
+            for(int i = 0;i < pointCnt;++i){
+                for (int j = 0; j < pointCnt;++j){
                     if(i == j)
                         continue;
                     if(matrix[i][k] > 0 && matrix[k][j] > 0){
-                       double temp = matrix[i][k] * matrix[k][j];
-                       if(matrix[i][j] == -1)
-                           matrix[i][j] = temp;
-                       else if(matrix[i][j] > temp)
-                           matrix[i][j] = temp;
+                        double temp = matrix[i][k] * matrix[k][j];
+                        if(matrix[i][j] == -1)
+                            matrix[i][j] = temp;
+                        else if(matrix[i][j] > temp)
+                            matrix[i][j] = temp;
                     }
                 }
             }
         }
-        return matrix;
-    }
-    private Integer[] getXandY(String start,String end){
-        Integer[] ans = new Integer[]{-1,-1};
-        if(!dict.containsKey(start) || !dict.containsKey(end))
-            return ans;
-        if(start.equals(end))
-            return new Integer[]{0,0};
-        if(map.containsKey(start) && map.containsKey(end))
-            return new Integer[]{map.get(start),map.get(end)};
-        if(start.length() == 1 && end.length() == 1){
-            ans[0] = map.get(start);
-            ans[1] = map.get(end);
-        }else{
-            StringBuilder[] temps = getStringTemp(start, end);
-            String s = temps[0].toString();
-            String t = temps[1].toString();
-            ans[0] = map.get(s);
-            ans[1] = map.get(t);
+        for(int i = 0;i < queries.size();++i){
+            String a = queries.get(i).get(0);
+            String b = queries.get(i).get(1);
+            if(!map.containsKey(a) || !map.containsKey(b)){
+                ans[i] = -1.0;
+                continue;
+            }
+            ans[i] = matrix[map.get(a)][map.get(b)];
         }
         return ans;
-    }
-    private void addMap(String start, String end) {
-        if(start.length() == 1 && end.length() == 1){
-            if(!map.containsKey(start)){
-                map.put(start,pointCnt++);
-            }
-            if(!map.containsKey(end)){
-                map.put(end,pointCnt++);
-            }
-        }else {
-            if(containNumeric(start) || containNumeric(end)){
-                map.put(start,pointCnt++);
-                map.put(end,pointCnt++);
-                return;
-            }
-            StringBuilder[] temps = getStringTemp(start, end);
-            String s = temps[0].toString();
-            String e = temps[1].toString();
-            if(!map.containsKey(s)){
-                map.put(s,pointCnt++);
-            }
-            if(!map.containsKey(e)){
-                map.put(e,pointCnt++);
-            }
-        }
-    }
-    StringBuilder[] getStringTemp(String start,String end){
-        StringBuilder sTemp = new StringBuilder();
-        StringBuilder eTemp = new StringBuilder();
-        int[] used = new int[128];
-        for(int i = 0;i  < start.length();++i){
-            used[start.charAt(i)]++;
-        }
-        for(int i = 0 ;i < end.length();++i){
-            if(used[end.charAt(i)] > 0){
-                used[end.charAt(i)]--;
-            }else eTemp.append(end.charAt(i));
-        }
-        for(int i = 0;i < 128;++i){
-            if(used[i]>0)
-                sTemp.append((char)i);
-        }
-
-        return new StringBuilder[]{sTemp,eTemp};
-    }
-    public static boolean containNumeric(String str){
-        for (int i = str.length();--i>=0;){
-            if (Character.isDigit(str.charAt(i))){
-                return true;
-            }
-        }
-        return false;
     }
     public static void main(String[] args){  
         McalcEquation q = new McalcEquation();
