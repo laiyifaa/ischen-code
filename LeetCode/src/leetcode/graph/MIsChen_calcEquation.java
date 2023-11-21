@@ -1,13 +1,12 @@
 package leetcode.graph;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-public class McalcEquation {
+public class MIsChen_calcEquation {
     //399. 除法求值
     private int pointCnt;
+    boolean used[];
+    boolean flag ;
     public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
         double ans[] = new double[queries.size()];
         pointCnt = 0;
@@ -21,6 +20,7 @@ public class McalcEquation {
             }
         }
         double[][] matrix = new double[pointCnt][pointCnt];
+        used = new boolean[pointCnt];
         for(int i = 0;i < pointCnt;++i){
             for(int j = 0; j < pointCnt;++j){
                 matrix[i][j] = -1;
@@ -33,6 +33,7 @@ public class McalcEquation {
             matrix[map.get(a)][map.get(b)] = values[i];
             matrix[map.get(b)][map.get(a)] = 1.0/values[i];
         }
+        /*folyd
         for(int k = 0; k < pointCnt;++k){
             for(int i = 0;i < pointCnt;++i){
                 for (int j = 0; j < pointCnt;++j){
@@ -47,7 +48,7 @@ public class McalcEquation {
                     }
                 }
             }
-        }
+        }*/
         for(int i = 0;i < queries.size();++i){
             String a = queries.get(i).get(0);
             String b = queries.get(i).get(1);
@@ -55,12 +56,34 @@ public class McalcEquation {
                 ans[i] = -1.0;
                 continue;
             }
-            ans[i] = matrix[map.get(a)][map.get(b)];
+            Arrays.fill(used,false);
+            flag = false;
+            used[map.get(a)] = true;
+            ans[i]  = dfs(map.get(a),map.get(b),used,matrix,1.0);
+            matrix[map.get(a)][map.get(b)] = ans[i];
         }
         return ans;
     }
-    public static void main(String[] args){  
-        McalcEquation q = new McalcEquation();
+
+    private double dfs(Integer a, Integer b, boolean[] used, double[][] matrix,double res) {
+        if(matrix[a][b] != -1.0){
+            flag = true;
+            return  res * matrix[a][b];
+        }
+        for(int i = 0;i < pointCnt;++i){
+            if(!used[i] && matrix[a][i] != -1.0){
+                used[i] = true;
+                double ans =  dfs(i,b,used,matrix,res * matrix[a][i]);
+                if(flag)
+                    return ans;
+                used[i] = false;
+            }
+        }
+        return -1.0;
+    }
+
+    public static void main(String[] args){
+        MIsChen_calcEquation q = new MIsChen_calcEquation();
         List<List<String>> equations = new ArrayList<>();
         List<List<String>> queries  = new ArrayList<>();
         List<String> equation1 = new ArrayList<>();
