@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MIsChen_equalPairs {
-
+    //2352. 相等行列对
     public int equalPairs(int[][] grid) {
         //前缀字典树
         int n=grid.length;

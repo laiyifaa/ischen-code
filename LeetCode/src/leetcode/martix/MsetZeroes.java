@@ -13,6 +13,8 @@ public class MsetZeroes {
             matrix[i][index] = 0;
         }
     }
+    //面试题 01.08. 零矩阵
+    //73. 矩阵置零
     public void setZeroes(int[][] matrix) {
         if(null == matrix || null == matrix[0])
             return;
