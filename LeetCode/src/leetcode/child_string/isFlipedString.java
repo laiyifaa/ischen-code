@@ -2,7 +2,7 @@ package leetcode.child_string;
 
 public class isFlipedString {
     //面试题 01.09. 字符串轮转
-    public boolean isFlipedString(String s1, String s2) {
+   /* public boolean isFlipedString(String s1, String s2) {
         if(s1 == null || s2 == null )
             return true;
         int len1 = s1.length() ;
@@ -25,6 +25,10 @@ public class isFlipedString {
             }
         }
       return ans;
+    }*/
+   // KMP
+    public boolean isFlipedString(String s1, String s2) {
+        return s1.length() == s2.length() && (s1 + s1).contains(s2);
     }
     public static void main(String[] args){
         isFlipedString q = new isFlipedString();
