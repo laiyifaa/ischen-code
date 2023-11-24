@@ -9,6 +9,7 @@ public class MaddTwoNumbers {
     }
 
     //2. 两数相加
+    //面试题 02.05. 链表求和
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         int s = 0;
         ListNode y = new ListNode(0);

@@ -15,6 +15,8 @@ public class getIntersectionNode {
         }
         return x;
     }
+    //面试题 02.07. 链表相交
+    //160. 相交链表
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         int la = len(headA);
         int lb = len(headB);

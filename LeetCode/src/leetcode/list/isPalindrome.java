@@ -3,9 +3,11 @@ package leetcode.list;
 public class isPalindrome {
 
 
+    //234. 回文链表
+    //面试题 02.06. 回文链表
     //快慢指针 + 颠倒
     public boolean isPalindrome(ListNode head) {
-        if(null == head.next)
+        if(null == head || null == head.next)
             return true;
         ListNode quick = head;
         ListNode slow = head;
