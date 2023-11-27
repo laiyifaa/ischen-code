@@ -5,6 +5,7 @@ import java.util.LinkedList;
 public class MinStack {
 
     //155. 最小栈
+    //面试题 03.02. 栈的最小值
     LinkedList<Integer> stack;
     LinkedList<Integer> minStack;
     public MinStack() {
