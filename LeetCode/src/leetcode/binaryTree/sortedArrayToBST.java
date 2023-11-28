@@ -2,6 +2,7 @@ package leetcode.binaryTree;
 
 public class sortedArrayToBST {
     //108. 将有序数组转换为二叉搜索树
+    //面试题 04.02. 最小高度树
     private TreeNode searchMidOrder(int l ,int r,int[] nums){
         if(l>r)
             return null;
