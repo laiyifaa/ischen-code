@@ -3,6 +3,7 @@ package leetcode.stack;
 import java.util.PriorityQueue;
 
 public class MSortedStack {
+    //面试题 03.05. 栈排序
     PriorityQueue<Integer> pq ;
     public MSortedStack() {
         pq = new PriorityQueue<>();
