@@ -1,7 +1,7 @@
 package leetcode.binaryTree;
 
 public class MinorderSuccessor {
-    //面试题 04.06. 后继者
+    //面试题 04. 06. 后继者
     private TreeNode ans;
     private int flag ;
     public TreeNode inorderSuccessor(TreeNode root, TreeNode p) {
