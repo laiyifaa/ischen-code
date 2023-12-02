@@ -2,6 +2,7 @@ package leetcode.binaryTree;
 
 public class McheckSubTree {
     //面试题 04.10. 检查子树
+    //双层DFS
     public boolean checkSubTree(TreeNode t1, TreeNode t2) {
         if(t1 == null)
             return false;

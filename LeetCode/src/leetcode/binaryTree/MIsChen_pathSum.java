@@ -2,6 +2,8 @@ package leetcode.binaryTree;
 
 public class MIsChen_pathSum {
     //437. 路径总和 III
+    //面试题 04.12. 求和路径
+    //双层DFS
     public int pathSum(TreeNode root, int targetSum) {
         if(null == root)
             return 0;
