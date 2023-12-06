@@ -1,4 +1,4 @@
-package leetcode.binaryTree;
+package leetcode.skill;
 
 public class MfindClosedNumbers {
     //面试题 05.04. 下一个数
