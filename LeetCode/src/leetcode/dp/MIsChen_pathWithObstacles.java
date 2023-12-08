@@ -1,39 +1,24 @@
 package leetcode.dp;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
 public class MIsChen_pathWithObstacles {
-    class node{
-        StringBuilder path;
-        int x;
-        int y;
-        node(int _x,int _y){
-            x = _x;
-            y = _y;
-            path = new StringBuilder();
-        }
-
-        public node(int _x, int _y, StringBuilder _path, int dir) {
-            x = _x;
-            y = _y;
-            path = new StringBuilder(_path);
-            path.append(dir);
-        }
-    }
     int r,c;
-    node ans = null;
     boolean flag ;
     //面试题 08.02. 迷路的机器人
+    //BFS 不行 DFS行
+    //这里用StringBuilder记录路径，也可以用List<List<Integer>> 回溯记录答案
+    //还可以逆向找解从终点开始找解
     public List<List<Integer>> pathWithObstacles(int[][] obstacleGrid) {
         if(null == obstacleGrid || obstacleGrid[0][0] == 1)
             return new LinkedList<>(new LinkedList<>());
         r = obstacleGrid.length;
         c = obstacleGrid[0].length;
-        node start = new node(0,0);
         flag = false;
-        dfs(start,obstacleGrid);
+        List<List<Integer>> res = new LinkedList<>(new LinkedList<>());
+        dfs(0,0,obstacleGrid,res);
         /*LinkedList<node> queue = new LinkedList<>();
         queue.addLast(new node(0,0));
         while (!queue.isEmpty()){
@@ -51,57 +36,29 @@ public class MIsChen_pathWithObstacles {
                 queue.addLast(new node(curNode.x + 1,curNode.y,curNode.path,1));
             }
         }*/
-        return getPath(ans);
+        return res;
     }
 
-    private void dfs(node curNode,int[][] obstacleGrid) {
+    private void dfs(int x,int y,int[][] obstacleGrid,List<List<Integer>> res) {
         if(flag)
             return;
-        if(curNode.x == r - 1 && curNode.y == c - 1){
-            ans = curNode;
+        if(x == r - 1 && y == c - 1){
+            res.add(Arrays.asList(x,y));
             flag = true;
             return;
         }
-        if(curNode.y < c - 1 && obstacleGrid[curNode.x][curNode.y + 1] == 0){
+        res.add(Arrays.asList(x,y));
+        if(y < c - 1 && obstacleGrid[x][y + 1] == 0){
             //往右是0
-            dfs(new node(curNode.x,curNode.y + 1,curNode.path,0),obstacleGrid);
+            dfs(x,y + 1,obstacleGrid,res);
         }
-        if(curNode.x < r - 1 && obstacleGrid[curNode.x + 1][curNode.y] == 0){
+        if(x < r - 1 && obstacleGrid[x + 1][y] == 0){
             //往下是0
-            dfs(new node(curNode.x + 1,curNode.y,curNode.path,1),obstacleGrid);
+            dfs(x + 1,y,obstacleGrid,res);
         }
         if(!flag){
-            obstacleGrid[curNode.x][curNode.y] = 1;
+            res.remove(res.size() - 1);
+            obstacleGrid[x][y] = 1;
         }
     }
-
-    private List<List<Integer>> getPath(node ans) {
-        if(ans == null){
-            return new LinkedList<>(new LinkedList<>());
-        }
-        String s = ans.path.toString();
-        List<List<Integer>> ansList = new ArrayList<>(s.length() + 1);
-        int x = 0;
-        int y = 0;
-        addAnsList(x,y,ansList);
-        for(int i = 0; i < s.length();++i){
-            char c = s.charAt(i);
-            if(c == '0'){
-                ++y;
-                addAnsList(x,y,ansList);
-            } else if (c == '1') {
-                ++x;
-                addAnsList(x,y,ansList);
-            }
-        }
-        return ansList;
-    }
-
-    private void addAnsList(int x, int y, List<List<Integer>> ansList) {
-        List<Integer> list = new ArrayList<>(2);
-        list.add(x);
-        list.add(y);
-        ansList.add(list);
-    }
-
 }
