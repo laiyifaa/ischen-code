@@ -23,6 +23,7 @@ public class Msubsets {
         dfs(nums,step + 1);
     }
     //78. 子集
+    //面试题 08.04. 幂集
     public List<List<Integer>> subsets(int[] nums) {
         if(null == nums || nums.length == 0)
             return ans;
