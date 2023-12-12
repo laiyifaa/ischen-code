@@ -117,37 +117,7 @@ dp:
             }
             --完全背包
             for(int i = 1;i<=n;++i){
-                for(int j = w[i];j<=m;++j){ public int equalPairs(int[][] grid) {
-                                                       //前缀字典树
-                                                       int n=grid.length;
-                                                       int ans=0;
-                                                       Node root=new Node();
-                                                       for(int j=0;j<n;j++){
-                                                           Node node=root;
-                                                           for(int i=0;i<n;i++){
-                                                               int num=grid[i][j];
-                                                               Node next=node.map.get(num);
-                                                               if(next==null)node.map.put(num,new Node());
-                                                               node=node.map.get(num);
-                                                           }
-                                                           node.count++;
-                                                       }
-                                                       for(int i=0;i<n;i++){
-                                                           Node node=root;
-                                                           for(int j=0;j<n;j++){
-                                                               int num=grid[i][j];
-                                                               if(node.map.get(num)==null)break;
-                                                               node=node.map.get(num);
-                                                           }
-                                                           ans+=node.count;
-                                                       }
-                                                       return ans;
-                                                   }
-                                                   class Node{
-                                                       Map<Integer,Node> map=new HashMap<>();
-                                                       int count;
-
-                                                   }
+                for(int j = w[i];j<=m;++j){
                      if(j >= w[i])
                      dp[j] = max(dp[j],[j - w[i]] + c[i])
                 }
