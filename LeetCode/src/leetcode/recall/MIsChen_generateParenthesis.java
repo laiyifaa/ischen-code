@@ -21,6 +21,7 @@ public class MIsChen_generateParenthesis {
 
     }
     //22. 括号生成
+    //面试题 08.09. 括号
     public List<String> generateParenthesis(int n) {
         ans = new LinkedList<>();
         if(n > 8 || n < 1)
