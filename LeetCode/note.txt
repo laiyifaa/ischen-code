@@ -94,6 +94,22 @@ tips:
             }
 
 dp:
+LIS:最长递增子序列/最长上升子序列 leetcode300 堆箱子
+    (n2 ,nlogn )
+LCS:最长公共子序列
+                for x = 0 to n do
+                    for y = 0 to m do
+                        if (x == 0 || y == 0) then
+                            LCS(x, y) = 0
+                        else if (Ax == By) then
+                            LCS(x, y) =  LCS(x - 1,y - 1) + 1
+                        else
+                            LCS(x, y) = ) max(LCS(x – 1, y) , LCS(x, y – 1))
+                        endif
+                    endfor
+                endfor
+区间DP：DP[L,R] = DP[L,K] + DP[K+1,R] + cost[L,R,K]
+
             // 01背包 完全背包 多重背包
             w[]重量数组 c[]花费数组 s[]数量数组
             dp[][]
