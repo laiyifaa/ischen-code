@@ -3,6 +3,7 @@ package leetcode.hash;
 import java.util.*;
 
 public class MIshChen_groupAnagrams {
+
     int[]  words = new int[]{
             2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101
     };
@@ -22,6 +23,7 @@ public class MIshChen_groupAnagrams {
      * @param strs
      * @return
      */
+    //面试题 10.02. 变位词组
     public List<List<String>> groupAnagrams(String[] strs) {
         if(null == strs){
             return null;
