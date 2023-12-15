@@ -109,12 +109,12 @@ LCS:最长公共子序列
                     endfor
                 endfor
 区间DP：DP[L,R] = DP[L,K] + DP[K+1,R] + cost[L,R,K]
-
+数位区间：【数位DP详解】 https://www.bilibili.com/video/BV1Fc411h76q/
             // 01背包 完全背包 多重背包
             w[]重量数组 c[]花费数组 s[]数量数组
             dp[][]
             dp[]
-            --01背包
+            --01背包 -每个物品只有一个
             for(int i = 1;i<=n;++i){
                 for(int j = 1;j<=m;++j){
                     if(j < w[i]){
@@ -131,14 +131,14 @@ LCS:最长公共子序列
                      dp[j] = max(dp[j],[j - w[i]] + c[i])
                 }
             }
-            --完全背包
+            --完全背包 -每个物品无穷多个
             for(int i = 1;i<=n;++i){
                 for(int j = w[i];j<=m;++j){
                      if(j >= w[i])
                      dp[j] = max(dp[j],[j - w[i]] + c[i])
                 }
             }
-            --多重背包
+            --多重背包 -每个物品有限个
             for(int i = 1;i<=n;++i){
                 for(int j = m;j>=1;--j){
                    for(int k = 0; k <=s[i] && j >= k * w[i];++k){
