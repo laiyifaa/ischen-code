@@ -2,7 +2,7 @@ package leetcode.martix;
 
 public class MIsChen_searchMatrix {
     /*public boolean searchMatrix(int[][] matrix, int target) {
-        if(null == matrix || null == matrix[0]){
+        if(0 == matrix.length || 0 == matrix[0].length){
             return false;
         }
         for(int i = 0;i<matrix.length;i++){
@@ -20,9 +20,9 @@ public class MIsChen_searchMatrix {
         }
         return false;
     }*/
-    
+    //面试题 10.09. 排序矩阵查找
     public boolean searchMatrix(int[][] matrix, int target) {
-        if(null == matrix || null == matrix[0]){
+        if(0 == matrix.length || 0 == matrix[0].length){
             return false;
         }
         int m = matrix.length;
