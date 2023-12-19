@@ -53,6 +53,11 @@ tips:
             // String StringBuilder StringBuffer(并发)
             反复new String 不如 new StringBUilder 如果能 记录 l,r 不如 s.subString(l,r+1)
 数据结构 ：
+            树状数组：MStreamRank
+            https://www.bilibili.com/video/BV1pE41197Qj
+            lowbit:非负整数n在二进制表示下最低位1及其后面0构成的数值 。lowbit(44) = lowbit(101100) = 100 = 4
+                    return x & (-x);  树状数组每层的 lowbit 都相同
+
             图论 邻接表  1466. 重新规划路线
               BFS 判断放在for里面
             循环队列 649. Dota2 参议院
@@ -110,6 +115,7 @@ LCS:最长公共子序列
                 endfor
 区间DP：DP[L,R] = DP[L,K] + DP[K+1,R] + cost[L,R,K]
 数位区间：【数位DP详解】 https://www.bilibili.com/video/BV1Fc411h76q/
+
             // 01背包 完全背包 多重背包
             w[]重量数组 c[]花费数组 s[]数量数组
             dp[][]
