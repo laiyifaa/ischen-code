@@ -4,6 +4,7 @@ import java.util.Iterator;
 import java.util.LinkedHashMap;
 
 public class LRUCache {
+    //面试题 16.25. LRU 缓存
     LinkedHashMap<Integer,Integer> map ;
     int size = 0;
     public LRUCache(int capacity) {

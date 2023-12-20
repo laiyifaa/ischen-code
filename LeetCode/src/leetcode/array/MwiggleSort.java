@@ -1,7 +1,7 @@
 package leetcode.array;
 
 import java.util.Arrays;
-import java.util.List;
+
 
 public class MwiggleSort {
     //面试题 10.11. 峰与谷
