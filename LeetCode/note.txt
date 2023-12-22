@@ -53,6 +53,8 @@ tips:
             // String StringBuilder StringBuffer(并发)
             反复new String 不如 new StringBUilder 如果能 记录 l,r 不如 s.subString(l,r+1)
 数据结构 ：
+            1109. 航班预订统计 面试题 16.10. 生存人数
+
             差分数组：支持多次改变前缀和，减少改变前缀和的操作复杂度
                 构造差分数组，区间操作改为对差分数组头尾的2次操作，最后可通过差分数组复原数组
                 https://www.bilibili.com/video/BV1NY4y1J7xQ/
