@@ -53,9 +53,12 @@ tips:
             // String StringBuilder StringBuffer(并发)
             反复new String 不如 new StringBUilder 如果能 记录 l,r 不如 s.subString(l,r+1)
 数据结构 ：
+            差分数组：支持多次改变前缀和，减少改变前缀和的操作复杂度
+                构造差分数组，区间操作改为对差分数组头尾的2次操作，最后可通过差分数组复原数组
+                https://www.bilibili.com/video/BV1NY4y1J7xQ/
             树状数组：MStreamRank
-            https://www.bilibili.com/video/BV1pE41197Qj
-            lowbit:非负整数n在二进制表示下最低位1及其后面0构成的数值 。lowbit(44) = lowbit(101100) = 100 = 4
+                https://www.bilibili.com/video/BV1pE41197Qj 支持区间修改，单点查询 | 区间修改 区间查询
+                lowbit:非负整数n在二进制表示下最低位1及其后面0构成的数值 。lowbit(44) = lowbit(101100) = 100 = 4
                     return x & (-x);  树状数组每层的 lowbit 都相同
 
             图论 邻接表  1466. 重新规划路线
