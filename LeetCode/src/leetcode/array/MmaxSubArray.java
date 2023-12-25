@@ -1,7 +1,7 @@
 package leetcode.array;
 
 public class MmaxSubArray {
-
+    //面试题 16.17. 连续数列
     public int maxSubArray(int[] nums) {
         if(null == nums || 0 == nums.length)
             return 0;
