@@ -1,6 +1,6 @@
 package leetcode.child_string;
 
-public class masterMind {
+public class IsChen_masterMind {
     //面试题 16.15. 珠玑妙算
     public int[] masterMind(String solution, String guess) {
         if(null == solution || guess == null)
@@ -38,11 +38,5 @@ public class masterMind {
         if(c == 'Y')
             return 3;
         return -1;
-    }
-    public static void main(String[] args){
-        masterMind q = new masterMind();
-        int[] ints = q.masterMind("YBBY", "GYYB");
-        System.out.println(ints[0]);
-        System.out.println(ints[1]);
     }
 }
