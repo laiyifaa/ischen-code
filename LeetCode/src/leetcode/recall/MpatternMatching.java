@@ -6,7 +6,6 @@ public class MpatternMatching {
     int bCount;
     //面试题 16.18. 模式匹配
     public boolean patternMatching(String pattern, String value) {
-     //todo 长度别从0 开始，逆置
         aCount = 0;
         bCount = 0;
         pattern = getPattern(pattern);
