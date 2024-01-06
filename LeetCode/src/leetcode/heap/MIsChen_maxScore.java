@@ -10,6 +10,7 @@ public class MIsChen_maxScore {
     //排序后保留原来索引
     public long maxScore(int[] nums1, int[] nums2, int k) {
         Integer[] idx  = new Integer[nums1.length];
+        //设置索引
         for(int i = 0;i < nums1.length;++i){
             idx[i] = i;
         }
