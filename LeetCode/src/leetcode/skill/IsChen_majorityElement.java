@@ -1,7 +1,9 @@
 package leetcode.skill;
 
-public class majorityElement {
+public class IsChen_majorityElement {
     //169. 多数元素
+    //面试题 17.10. 主要元素
+    //摩尔投票
     public int majorityElement(int[] nums) {
         int cnt = 1;
         int num = nums[0];
@@ -17,10 +19,12 @@ public class majorityElement {
                 cnt = 1;
             }
         }
-        return num;
+        cnt = 0;
+        for(int x : nums){
+            if(x == num)
+                ++cnt;
+        }
+        return cnt * 2 > nums.length?num:-1;
     }
-    public static void main(String[] args){
-        majorityElement q = new majorityElement();
-        System.out.println(q.majorityElement(new int[]{1,2,3,4,4,5,6,7}));
-    }
+
 }
