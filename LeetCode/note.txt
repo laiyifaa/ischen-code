@@ -157,7 +157,7 @@ LCS:最长公共子序列
                    }
                 }
             }
-//数学 gcd函数
+//数学 gcd函数 面试题 16.14. 最佳直线
     private int  gcd(int a, int b){
         if(b==0){
             return a;}
