@@ -23,7 +23,6 @@ public class MIsChen_respace {
         }
         for (int i = 1; i <= sentence.length(); ++i) {
             dp[i] = dp[i - 1] + 1;
-
             Node curPos = root;
             for (int j = i; j >= 1; --j) {
                 int t = sentence.charAt(j - 1) - 'a';
@@ -39,8 +38,27 @@ public class MIsChen_respace {
             }
         }
         return dp[sentence.length()];
-
     }
+/*    public int respace(String[] dictionary, String sentence) {
+        Set<String> dictSet = new HashSet<>(Arrays.asList(dictionary));
+        int n = sentence.length();
+        int[] dp = new int[n + 1];
+
+        for (int end = 1; end <= n; end++) {
+            dp[end] = dp[end - 1] + 1; // Initialize with maximum unrecognized characters
+
+            for (int start = 0; start < end; start++) {
+                String word = sentence.substring(start, end);
+
+                if (dictSet.contains(word)) {
+                    dp[end] = Math.min(dp[end], dp[start]);
+                }
+            }
+        }
+
+        return dp[n];
+    }*/
+
     private void insert(String word) {
         Node cur = root;
 
