@@ -2,7 +2,7 @@ package leetcode.dp;
 
 import java.util.Arrays;
 
-public class Mrespace {
+public class MIsChen_respace {
     class Node{
         boolean isWord = false;
         Node[] childrens = new Node[26];
@@ -41,7 +41,6 @@ public class Mrespace {
         return dp[sentence.length()];
 
     }
-
     private void insert(String word) {
         Node cur = root;
 
@@ -54,13 +53,16 @@ public class Mrespace {
         }
         cur.isWord = true;
     }
-    public static void main(String[] args){  
+
+
+
+    public static void main(String[] args){
         String sentence = "bqqffbqbbfqrfrrrbbrrbfrfqqbbbrbfqfffffrfqfqfffffrrfqfrrqbqfrbfrqqrfrbrbbqbqbqqfqrfbfrfr";
         //sssjjssfshscfjjshsjjsjchffffs
         String[] dictionary = new String[]{
                 "frrrbbrrbfrfqqbbbrb","qr","b","rf","qqbbbbfrqbrrqrffbrqqqbqqfqfrr","r","ffqq","bffbqfqqbrrrf","fq","qfr","fr","rqrrbfbfq","r","f","qbqbrbrbqfqbbbfbbbfbq","bqqbbbqrbbrf","f"
         };
-        Mrespace q = new Mrespace();
+        MIsChen_respace q = new MIsChen_respace();
         System.out.println(q.respace(dictionary,sentence));
     }
 }
