@@ -24,6 +24,7 @@ public class MIsChen_respace {
         for (int i = 1; i <= sentence.length(); ++i) {
             dp[i] = dp[i - 1] + 1;
             Node curPos = root;
+            //看似到头，其实长度有限制的。
             for (int j = i; j >= 1; --j) {
                 int t = sentence.charAt(j - 1) - 'a';
                 if (curPos.childrens[t] == null) {
