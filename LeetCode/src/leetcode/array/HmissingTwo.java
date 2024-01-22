@@ -1,7 +1,6 @@
 package leetcode.array;
 
 public class HmissingTwo {
-
     //面试题 17.19. 消失的两个数字
     public int[] missingTwo(int[] nums) {
         if(null == nums || nums.length == 0)
@@ -19,7 +18,5 @@ public class HmissingTwo {
         }
         return ans;
     }
-    public static void main(String[] args){  
 
-    }
 }

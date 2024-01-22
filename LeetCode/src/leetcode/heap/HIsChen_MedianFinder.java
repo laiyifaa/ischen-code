@@ -5,12 +5,14 @@ import java.util.PriorityQueue;
 
 public class HIsChen_MedianFinder {
 
+    //俩个堆 动态求中位数
     PriorityQueue<Integer> minHeap ;//存大数
     PriorityQueue<Integer> maxHeap ;//存小数
     //295. 数据流的中位数
+    //面试题 17.20. 连续中值
     public HIsChen_MedianFinder() {
-        minHeap = new PriorityQueue<Integer>();
-        maxHeap = new PriorityQueue<Integer>((a,b) -> b - a);
+        minHeap = new PriorityQueue<>();
+        maxHeap = new PriorityQueue<>((a,b) -> b - a);
     }
 
     public void addNum(int num) {
