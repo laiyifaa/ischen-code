@@ -119,8 +119,33 @@ LCS:最长公共子序列
                     endfor
                 endfor
 区间DP：DP[L,R] = DP[L,K] + DP[K+1,R] + cost[L,R,K]
-数位区间：【数位DP详解】 https://www.bilibili.com/video/BV1Fc411h76q/
+数位区间：【数位DP详解】 https://www.bilibili.com/video/BV1Fc411h76q/ 面试题 17.06. 2出现的次数
+            int[][]dp;
+                //pos -- 当前位
+                //pre_num -- 前一个数字 --题目要求
+                //flag -- 约束条件
+                //jump -- 是否跳过位数
+                //例题 Windy数
+                private int dfs(int pos ,int pre_num,boolean flag,boolean jump){
+                    if(pos <= 0)
+                        return 1;
+                    if(!flag && dp[pos][pre_num]!=-1)
+                        return dp[pos][pre_num];
+                    int max_num = 0;
+                    if(flag){
 
+                    }else {
+
+                    }
+                    int ret = 0;
+                    for(int i = 0;i <= max_num;++i){
+                        if(true)
+                            ret +=dfs(pos-1,i,flag && (true));
+                    }
+                    if(!flag)
+                        dp[pos][pre_num] = ret;
+                    return ret;
+                }
             // 01背包 完全背包 多重背包
             w[]重量数组 c[]花费数组 s[]数量数组
             dp[][]
