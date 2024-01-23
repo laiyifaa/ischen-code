@@ -118,7 +118,7 @@ LCS:最长公共子序列
                         endif
                     endfor
                 endfor
-区间DP：DP[L,R] = DP[L,K] + DP[K+1,R] + cost[L,R,K]
+区间DP：DP[L,R] = DP[L,K] + DP[K+1,R] + cost[L,R,K] //面试题 08.14. 布尔运算
 数位区间：【数位DP详解】 https://www.bilibili.com/video/BV1Fc411h76q/ 面试题 17.06. 2出现的次数
             int[][]dp;
                 //pos -- 当前位
@@ -133,14 +133,14 @@ LCS:最长公共子序列
                         return dp[pos][pre_num];
                     int max_num = 0;
                     if(flag){
-
+                        max_num = s[pos];
                     }else {
-
+                        max_num = 9;
                     }
                     int ret = 0;
                     for(int i = 0;i <= max_num;++i){
                         if(true)
-                            ret +=dfs(pos-1,i,flag && (true));
+                            ret +=dfs(pos-1,i,flag && (i == s[pos]));
                     }
                     if(!flag)
                         dp[pos][pre_num] = ret;
