@@ -36,6 +36,7 @@ public class MIsChen_trap {
         return ans;
     }*/
     //42 动态规划（统计左右俩边最大值，取左右最大值的最小值 >=height[i] +=ans）
+    //面试题 17.21. 直方图的水量
     public int trap(int[] height) {
         int len = height.length;
         if(len==0||len ==1){
