@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 public class HfindIntegers {
     //600. 不含连续1的非负整数
+    //数位dp
     char[] s;
     int[][] dp;
     public int findIntegers(int n) {
