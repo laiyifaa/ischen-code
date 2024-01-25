@@ -7,8 +7,10 @@ public class HatMostNGivenDigitSet {
     char[] s;
     int [][] dp;
     HashSet<Integer> set;
+    //902. 最大为 N 的数字组合
+    //数位dp
     public int atMostNGivenDigitSet(String[] digits, int n) {
-        //902. 最大为 N 的数字组合
+
         s = Integer.toString(n).toCharArray();
         dp = new int[s.length][s.length];
         for(int i = 0;i < s.length;++i)
