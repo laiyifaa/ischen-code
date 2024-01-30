@@ -119,7 +119,7 @@ LCS:最长公共子序列
                     endfor
                 endfor
 区间DP：DP[L,R] = DP[L,K] + DP[K+1,R] + cost[L,R,K] //面试题 08.14. 布尔运算
-数位区间：【数位DP详解】 https://www.bilibili.com/video/BV1Fc411h76q/ 面试题 17.06. 2出现的次数
+数位区间：【数位DP详解】 https://www.bilibili.com/video/BV1Fc411h76q/ 面试题 17.06. 2出现的次数  | 1012. 至少有 1 位重复的数字
             int[][]dp;
                 //pos -- 当前位
                 //pre_num -- 前一个数字 --题目要求
