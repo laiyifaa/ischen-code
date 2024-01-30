@@ -1,7 +1,7 @@
 package leetcode.sum;
 
 import java.util.*;
-import java.util.stream.Stream;
+
 
 public class HmaxRectangle {
     //面试题 17.25. 单词矩阵
@@ -39,44 +39,43 @@ public class HmaxRectangle {
             insert(w);
         }
         for(int len : map.keySet()){//单词长度
-            Node[] nodes = new Node[len];//列
-            for(int i = 0;i < len;++i){
-                nodes[i] = root;
-            }
-            List<String> list = new ArrayList<>(map.get(len));//这个长度下的单词集合
-            dfs(list,new ArrayList<>(len),nodes);
+            Node[] nodes = new Node[len];
+            Arrays.fill(nodes,root);
+            dfs(map.get(len),new ArrayList<>(),nodes);
         }
         return ans.toArray(new String[ans.size()]);
     }
 
-    private void dfs(List<String> list, ArrayList<String> curList, Node[] nodes) {
-        int len = nodes.length;//即单词的长度
+    private void dfs(Set<String> wordSet, ArrayList<String> curList, Node[] nodes) {
+        int len = nodes.length;//单词长度
         if(len * len <= maxArea || curList.size() == len)
             return;
-        for(int i = 0;i < list.size(); ++i){//单词列表
+        for(String word : wordSet){
             boolean flag = true;
-            Node[] next = new Node[nodes.length];
             int cnt = 0;
-            for(int j = 0;j < len && cnt == j;++j){//长度
-                int c = list.get(i).charAt(j) - 'a';
+            Node[] next = new Node[len];
+            for(int j = 0;j < len && cnt == j;++j){
+                int c = word.charAt(j) - 'a';
                 if(nodes[j].childrens[c] == null)
-                   continue;
+                    continue;
                 ++cnt;
-                if(!nodes[j].childrens[c].isWord)
-                    flag = false;
+                flag = flag & nodes[j].childrens[c].isWord;
                 next[j] = nodes[j].childrens[c];
             }
             if(cnt >= len){
-                curList.add(list.get(i));
-                if(flag && maxArea < len * curList.size()){
+                curList.add(word);
+                if(flag && len * curList.size() > maxArea){
                     maxArea = len * curList.size();
                     ans = new ArrayList<>(curList);
                 }
-                dfs(list,curList,next);
+                dfs(wordSet,curList,next);
                 curList.remove(curList.size() - 1);
             }
+
         }
     }
+
+
     public static void main(String[] args){
         HmaxRectangle q = new HmaxRectangle();
         String[] strings = q.maxRectangle(new String[]{
