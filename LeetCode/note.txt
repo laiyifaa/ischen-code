@@ -104,7 +104,7 @@ tips:
             }
 
 dp:
-LIS:最长递增子序列/最长上升子序列 leetcode300 堆箱子
+LIS:最长递增子序列/最长上升子序列 leetcode300 堆箱子 面试题 17.08. 马戏团人塔
     (n2 ,nlogn )
 LCS:最长公共子序列
                 for x = 0 to n do
