@@ -29,5 +29,8 @@ leetcode 1251. 平均售价
 // BETWEEN DATE_ADD('2019-07-27',INTERVAL -29 day) and '2019-07-27'
 // IF(条件,1,0)
 // round(value,2) 保留2位
+// group by product_id having MAX(sale_date) <= '2019-03-31'
+   and MIN(sale_date) >= '2019-01-01'
+   只有group之后才能用 having ，having可以使用聚合函数
 
 
