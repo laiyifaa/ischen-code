@@ -31,6 +31,6 @@ leetcode 1251. 平均售价
 // round(value,2) 保留2位
 // group by product_id having MAX(sale_date) <= '2019-03-31'
    and MIN(sale_date) >= '2019-01-01'
-   只有group之后才能用 having ，having可以使用聚合函数
+   只有group by之后才能用 having ，having可以使用聚合函数
 
 
