@@ -46,6 +46,6 @@ public class romanToInt {
     }
     public static void main(String[] args){
         romanToInt q = new romanToInt();
-        System.out.println(q.romanToInt("MCMXCIV"));
+        System.out.println(q.romanToInt("MCMLCIV"));
     }
 }
