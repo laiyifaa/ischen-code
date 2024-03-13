@@ -32,5 +32,7 @@ leetcode 1251. 平均售价
 // group by product_id having MAX(sale_date) <= '2019-03-31'
    and MIN(sale_date) >= '2019-01-01'
    只有group by之后才能用 having ，having可以使用聚合函数
+// CASE [col_name] WHEN [value1] THEN [result1]…ELSE [default] END
+   CASE WHEN [expr] THEN [result1]…ELSE [default] END
 
 
