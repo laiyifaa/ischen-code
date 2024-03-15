@@ -24,15 +24,26 @@ leetcode 1251. 平均售价
         p.start_date <= u.purchase_date AND
         u.purchase_date <= p.end_date
     group by p.product_id
+leetcode 1174. 即时食物配送 II
+
+select round(sum(order_date = customer_pref_delivery_date)*100/count(DISTINCT customer_id,order_date ) ,2)as immediate_percentage
+from delivery
+where (customer_id,order_date) in (
+select customer_id, min(order_date)
+    from delivery
+    group by customer_id
+
+		)
 
 // datediff 日期差函数 DATE_ADD 日期变更函数
+// DATE_FORMAT(trans_date, '%Y-%m') DATE_FORMAT(date,format)用于以不同的格式显示日期/时间数据
 // BETWEEN DATE_ADD('2019-07-27',INTERVAL -29 day) and '2019-07-27'
-// IF(条件,1,0)
+// IF(条件,1,0) ★★★★★
 // round(value,2) 保留2位
 // group by product_id having MAX(sale_date) <= '2019-03-31'
    and MIN(sale_date) >= '2019-01-01'
    只有group by之后才能用 having ，having可以使用聚合函数
 // CASE [col_name] WHEN [value1] THEN [result1]…ELSE [default] END
    CASE WHEN [expr] THEN [result1]…ELSE [default] END
-
+// where (列1,列2) in (select ....)
 
