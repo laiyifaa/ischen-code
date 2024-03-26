@@ -34,6 +34,17 @@ select customer_id, min(order_date)
     group by customer_id
 
 		)
+leetcode 1164. 指定日期的产品价格
+SELECT
+	p.product_id,
+IF( temp.product_id IS NULL, 10, temp.new_price ) AS price
+FROM
+	( SELECT DISTINCT product_id FROM products ) AS p LEFT JOIN (
+SELECT product_id,new_price
+FROM products
+WHERE ( product_id, change_date ) IN ( SELECT product_id, max( change_date ) AS newdate FROM Products WHERE change_date <= '2019-08-16' GROUP BY product_id )
+	) AS temp ON p.product_id = temp.product_id
+
 
 // datediff 日期差函数 DATE_ADD 日期变更函数
 // DATE_FORMAT(trans_date, '%Y-%m') DATE_FORMAT(date,format)用于以不同的格式显示日期/时间数据
