@@ -34,7 +34,8 @@ select customer_id, min(order_date)
     group by customer_id
 
 		)
-leetcode 1164. 指定日期的产品价格
+leetcode 1164. 指定日期的产品价格★★
+#好题
 SELECT
 	p.product_id,
 IF( temp.product_id IS NULL, 10, temp.new_price ) AS price
