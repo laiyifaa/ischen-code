@@ -36,15 +36,28 @@ select customer_id, min(order_date)
 		)
 leetcode 1164. 指定日期的产品价格★★
 #好题
+#distinct id 作为id表  结果作为辅助temp 连接 得到结果
 SELECT
 	p.product_id,
 IF( temp.product_id IS NULL, 10, temp.new_price ) AS price
 FROM
-	( SELECT DISTINCT product_id FROM products ) AS p LEFT JOIN (
+	( SELECT DISTINCT product_id FROM products ) AS p LEFT JOIN ( #★★
 SELECT product_id,new_price
 FROM products
 WHERE ( product_id, change_date ) IN ( SELECT product_id, max( change_date ) AS newdate FROM Products WHERE change_date <= '2019-08-16' GROUP BY product_id )
 	) AS temp ON p.product_id = temp.product_id
+
+1204. 最后一个能进入巴士的人★★★
+#巧妙自连接 通过turn获得在自己之前进入巴士的人，然后分组统计过滤
+SELECT a.person_name
+FROM Queue a, Queue b#★
+where a.turn >= b.turn #★
+GROUP BY a.person_id
+HAVING sum(b.weight) <= 1000
+ORDER BY a.turn desc
+LIMIT 1
+
+
 
 
 // datediff 日期差函数 DATE_ADD 日期变更函数
