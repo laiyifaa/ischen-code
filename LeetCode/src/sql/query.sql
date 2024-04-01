@@ -57,6 +57,11 @@ HAVING sum(b.weight) <= 1000
 ORDER BY a.turn desc
 LIMIT 1
 
+626. 换座位
+#奇偶问题三次连接
+select s1.id,case when s1.id%2=1 then if(s2.student is null,s1.student,s2.student) else s3.student end as student
+from Seat as s1 left join Seat as s2 on s1.id +1  = s2.id left join Seat as s3 on s1.id -1 = s3.id
+order by s1.id
 
 
 
