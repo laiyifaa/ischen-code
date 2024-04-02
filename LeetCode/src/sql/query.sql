@@ -76,4 +76,4 @@ order by s1.id
 // CASE [col_name] WHEN [value1] THEN [result1]…ELSE [default] END
    CASE WHEN [expr] THEN [result1]…ELSE [default] END
 // where (列1,列2) in (select ....)
-
+// 字符串函数 CONCAT(UPPER(SUBSTRING(name, 1, 1)), LOWER(SUBSTRING(name, 2))) AS name
