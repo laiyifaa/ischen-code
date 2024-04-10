@@ -1,4 +1,4 @@
-package javase.juc.demo.demo04;
+package javase.juc.thread.demo04;
 
 import java.util.concurrent.*;
 
