@@ -65,7 +65,7 @@ order by s1.id
 
 
 
-// datediff 日期差函数 DATE_ADD 日期变更函数
+// datediff 日期差函数 DATE_ADD 日期变更函数 year(created_at)='2020' and month(created_at)='02' 年月日函数
 // DATE_FORMAT(trans_date, '%Y-%m') DATE_FORMAT(date,format)用于以不同的格式显示日期/时间数据
 // BETWEEN DATE_ADD('2019-07-27',INTERVAL -29 day) and '2019-07-27'
 // IF(条件,1,0) ★★★★★
@@ -77,3 +77,4 @@ order by s1.id
    CASE WHEN [expr] THEN [result1]…ELSE [default] END
 // where (列1,列2) in (select ....)
 // 字符串函数 CONCAT(UPPER(SUBSTRING(name, 1, 1)), LOWER(SUBSTRING(name, 2))) AS name
+// union 去重合并 union all 不去重合并
