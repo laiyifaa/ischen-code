@@ -63,7 +63,19 @@ select s1.id,case when s1.id%2=1 then if(s2.student is null,s1.student,s2.studen
 from Seat as s1 left join Seat as s2 on s1.id +1  = s2.id left join Seat as s3 on s1.id -1 = s3.id
 order by s1.id
 
-
+1321. 餐馆营业额变化增长
+#子查询 t1 t2 连接 套用窗口问题
+select t1.visited_on,sum(t2.amount) as amount       , round(avg(t2.amount),2) as average_amount
+from (  SELECT visited_on, SUM(amount) AS amount
+        FROM Customer
+        GROUP BY visited_on
+) as t1 right join (
+        SELECT visited_on, SUM(amount) AS amount
+        FROM Customer
+        GROUP BY visited_on
+) as t2 on datediff(t1.visited_on,t2.visited_on) <= 6 and datediff(t1.visited_on,t2.visited_on) >= 0
+GROUP BY t1.visited_on
+HAVING count(*)=7
 
 // datediff 日期差函数 DATE_ADD 日期变更函数 year(created_at)='2020' and month(created_at)='02' 年月日函数
 // DATE_FORMAT(trans_date, '%Y-%m') DATE_FORMAT(date,format)用于以不同的格式显示日期/时间数据
@@ -78,3 +90,9 @@ order by s1.id
 // where (列1,列2) in (select ....)
 // 字符串函数 CONCAT(UPPER(SUBSTRING(name, 1, 1)), LOWER(SUBSTRING(name, 2))) AS name
 // union 去重合并 union all 不去重合并
+// over 函数的替代，因为mysql5.7不能使用over函数,使用子查询替代
+    SELECT t1.id, t1.value, SUM(t2.value) AS cumulative_sum
+    FROM my_table t1
+    JOIN my_table t2 ON t2.id <= t1.id
+    GROUP BY t1.id
+    ORDER BY t1.id;
