@@ -64,7 +64,8 @@ tips:
                     return x & (-x);  树状数组每层的 lowbit 都相同
 
             图论 邻接表  1466. 重新规划路线
-              BFS 判断放在for里面
+            BFS  判断放在for里面
+                  
             循环队列 649. Dota2 参议院
             字典树 2352. 相等行列对 208. 实现 Trie (前缀树)
             map.getOrDefault(key,default) map.getOrDefault(preSum,0) 有则返回 否则返回0
