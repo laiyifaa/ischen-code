@@ -77,6 +77,15 @@ from (  SELECT visited_on, SUM(amount) AS amount
 GROUP BY t1.visited_on
 HAVING count(*)=7
 
+★185. 部门工资前三高的所有员工
+表1 的列可带入where的子查询进行条件
+SELECT d.Name AS 'Department', e1.Name AS 'Employee', e1.Salary
+FROM Employee e1 JOIN Department d ON e1.DepartmentId = d.Id
+WHERE  (SELECT COUNT(DISTINCT e2.Salary) #去重 保证第一第二第三
+        FROM Employee e2
+        WHERE e2.Salary > e1.Salary AND e1.DepartmentId = e2.DepartmentId) < 3
+
+
 // datediff 日期差函数 DATE_ADD 日期变更函数 year(created_at)='2020' and month(created_at)='02' 年月日函数
 // DATE_FORMAT(trans_date, '%Y-%m') DATE_FORMAT(date,format)用于以不同的格式显示日期/时间数据
 // BETWEEN DATE_ADD('2019-07-27',INTERVAL -29 day) and '2019-07-27'
@@ -90,7 +99,7 @@ HAVING count(*)=7
 // where (列1,列2) in (select ....)
 // 字符串函数 CONCAT(UPPER(SUBSTRING(name, 1, 1)), LOWER(SUBSTRING(name, 2))) AS name
 // union 去重合并 union all 不去重合并
-// over 函数的替代，因为mysql5.7不能使用over函数,使用子查询替代
+// over 函数的替代，因为mysql5.7不能使用over函数,使用子查询替代 #1321
     SELECT t1.id, t1.value, SUM(t2.value) AS cumulative_sum
     FROM my_table t1
     JOIN my_table t2 ON t2.id <= t1.id
