@@ -21,7 +21,7 @@ public class Test21 {
 
         new Thread(() -> {
             while(true) {
-                sleep(1);
+                //sleep(1);
                 Message message = queue.take();
             }
         }, "消费者").start();
