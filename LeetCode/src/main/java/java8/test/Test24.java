@@ -19,8 +19,6 @@ public class Test24 {
     static Condition waitTakeoutSet = ROOM.newCondition();
 
     public static void main(String[] args) {
-
-
         new Thread(() -> {
             ROOM.lock();
             try {

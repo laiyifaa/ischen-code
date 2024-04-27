@@ -84,6 +84,10 @@ FROM Employee e1 JOIN Department d ON e1.DepartmentId = d.Id
 WHERE  (SELECT COUNT(DISTINCT e2.Salary) #去重 保证第一第二第三
         FROM Employee e2
         WHERE e2.Salary > e1.Salary AND e1.DepartmentId = e2.DepartmentId) < 3
+196. 删除重复的电子邮箱
+#删除的where得套用 join ( select **** where)
+#连接删除的样例
+delete  p1 from Person as p1  inner join Person as p2 on p1.Email = p2.Email and p1.id > p2.id
 
 
 // datediff 日期差函数 DATE_ADD 日期变更函数 year(created_at)='2020' and month(created_at)='02' 年月日函数

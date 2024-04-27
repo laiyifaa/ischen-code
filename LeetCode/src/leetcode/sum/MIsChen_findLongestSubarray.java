@@ -6,7 +6,7 @@ public class MIsChen_findLongestSubarray {
     //面试题 17.05. 字母与数字
     //要求字母和数字个数相同的最长
     //转换前缀和
-    //暴力超时拉 那么假如hash减速吧
+    //暴力超时拉 那么加入hash减速吧
     public String[] findLongestSubarray(String[] array) {
         if(null == array || array.length == 0)
             return new String[]{};

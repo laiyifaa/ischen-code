@@ -11,15 +11,14 @@ public class Test32 {
 
     public static void main(String[] args) throws InterruptedException {
         Thread t = new Thread(()->{
-            while(true){
-                    if(!run) {
-                        break;
-                    }
+            while(run){
+
             }
         });
         t.start();
 
         sleep(1);
+        log.debug("stop");
             run = false; // 线程t不会如预想的停下来
     }
 }

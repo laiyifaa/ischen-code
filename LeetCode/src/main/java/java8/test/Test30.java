@@ -11,6 +11,7 @@ public class Test30 {
         Condition a = awaitSignal.newCondition();
         Condition b = awaitSignal.newCondition();
         Condition c = awaitSignal.newCondition();
+        //开始 abc进 各自休息室
         new Thread(() -> {
             awaitSignal.print("a", a, b);
         }).start();
