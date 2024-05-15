@@ -88,7 +88,13 @@ WHERE  (SELECT COUNT(DISTINCT e2.Salary) #去重 保证第一第二第三
 #删除的where得套用 join ( select **** where)
 #连接删除的样例
 delete  p1 from Person as p1  inner join Person as p2 on p1.Email = p2.Email and p1.id > p2.id
-
+178. 分数排名
+//
+// select s1.score,count(distinct s2.score) as 'rank'
+  from Scores as s1 ,Scores as s2
+  where s2.score >= s1.score
+  GROUP BY s1.id,s1.score
+  ORDER BY s1.score desc
 
 // datediff 日期差函数 DATE_ADD 日期变更函数 year(created_at)='2020' and month(created_at)='02' 年月日函数
 // DATE_FORMAT(trans_date, '%Y-%m') DATE_FORMAT(date,format)用于以不同的格式显示日期/时间数据
