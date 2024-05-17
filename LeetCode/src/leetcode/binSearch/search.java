@@ -3,6 +3,7 @@ package leetcode.binSearch;
 public class search {
 
     //二分查找
+    //二分模板
     public int search(int[] nums, int target) {
         if(null == nums)
             return -1;
