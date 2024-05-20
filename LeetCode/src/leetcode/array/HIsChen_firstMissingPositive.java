@@ -1,6 +1,6 @@
 package leetcode.array;
 
-public class HfirstMissingPositive {
+public class HIsChen_firstMissingPositive {
     //41. 缺失的第一个正数
     //空间 ：原地哈希 O(1) 哈希表O（N） 排序O（LOGN）
     //原地哈希 将数组作为哈希表 ，此题的规则是 f(nums[i]=nums[i] -1) 即数组中的 i-1下标对应的是i，如果是非1-num.length的数不处理
@@ -23,8 +23,5 @@ public class HfirstMissingPositive {
         nums[i] = nums[j];
         nums[j] = temp;
     }
-    public static void main(String[] args){
-        HfirstMissingPositive q = new HfirstMissingPositive();
-        System.out.println(q.firstMissingPositive(new int[]{2,1}));
-    }
+
 }
