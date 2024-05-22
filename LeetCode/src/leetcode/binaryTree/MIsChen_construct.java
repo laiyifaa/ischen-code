@@ -1,6 +1,6 @@
 package leetcode.binaryTree;
 
-public class Mconstruct {
+public class MIsChen_construct {
     class Node {
         public boolean val;
         public boolean isLeaf;
