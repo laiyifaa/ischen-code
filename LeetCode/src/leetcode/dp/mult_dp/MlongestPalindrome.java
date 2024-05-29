@@ -42,7 +42,7 @@ public class MlongestPalindrome {
     public static void main(String[] args){  
         MlongestPalindrome q = new MlongestPalindrome();
         System.out.println(q.longestPalindrome(
-                "ac"
+                "babad"
         ));
 
     }
