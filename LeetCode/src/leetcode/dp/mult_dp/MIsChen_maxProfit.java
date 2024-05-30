@@ -15,7 +15,7 @@ public class MIsChen_maxProfit {
     }
 
     //122. 买卖股票的最佳时机 II
-    public int maxProfit(int[] prices) {
+/*    public int maxProfit(int[] prices) {
         if(null == prices || 0 == prices.length)
             return 0;
         int ans = 0;
@@ -23,6 +23,24 @@ public class MIsChen_maxProfit {
             ans += Math.max(0,prices[i] - prices[i - 1]);
         }
         return 0;
+    }*/
+
+    //123. 买卖股票的最佳时机 III
+    public int maxProfit(int[] prices) {
+        if(null == prices || prices.length <= 1)
+            return 0;
+        int cost1 = -prices[0];
+        int cost2 = -prices[0];
+        int profit1 = 0;
+        int profit2 = 0;
+        for(int i = 1;i < prices.length; ++i){
+            cost1 = Math.max(cost1,-prices[i]);
+            profit1 = Math.max(profit1,prices[i]  + cost1);
+            cost2 = Math.max(cost2,profit1 - prices[i]);
+            profit2 = Math.max(profit2,cost2 + prices[i]);
+        }
+        return profit2;
     }
+
 
 }
