@@ -115,4 +115,9 @@ delete  p1 from Person as p1  inner join Person as p2 on p1.Email = p2.Email and
     JOIN my_table t2 ON t2.id <= t1.id
     GROUP BY t1.id
     ORDER BY t1.id;
-//GROUP_CONCAT(distinct product     ) as products     分组后 将指定列拼接字符串
+//GROUP_CONCAT(distinct product     ) as products     分组后 将指定列拼接字符
+//行转列 select id,
+       sum(case month when 'Jan' then revenue end) as Jan_Revenue,
+      sum(case month when 'Feb' then revenue end) as Feb_Revenue,
+  from Department
+  group by id
