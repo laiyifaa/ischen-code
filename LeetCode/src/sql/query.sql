@@ -121,3 +121,5 @@ delete  p1 from Person as p1  inner join Person as p2 on p1.Email = p2.Email and
        sum(case month when 'Feb' then revenue end) as Feb_Revenue,
        from Department
        group by id
+//列转行
+ union union
