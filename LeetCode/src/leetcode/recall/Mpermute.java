@@ -7,12 +7,13 @@ import java.util.Map;
 
 public class Mpermute {
     //46 全排列
+    //47 全排列II
     List<List<Integer>> ansList ;
-    Map<String,Boolean> map;
+    //Map<String,Boolean> map;
     public List<List<Integer>> permute(int[] nums) {
         int mult = getMult(nums.length);
         ansList = new ArrayList<>(mult);
-        map = new HashMap<>(mult);
+       // map = new HashMap<>(mult);
         dfs(0,nums);
         return ansList;
     }
@@ -22,11 +23,12 @@ public class Mpermute {
             for(int i = 0;i<nums.length;++i){
                 tempList.add(nums[i]);
             }
-            String temp = getTemp(tempList);
+ /*           String temp = getTemp(tempList);
             if(!map.containsKey(temp)){
                 ansList.add(tempList);
                 map.put(temp,true);
-            }
+            }*/
+            ansList.add(tempList);
 
         }
         for(int i = k;i<nums.length;++i){
