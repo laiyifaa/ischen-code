@@ -1,13 +1,18 @@
 package leetcode.recall;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class Mpermute {
     //46 全排列
     List<List<Integer>> ansList ;
+    Map<String,Boolean> map;
     public List<List<Integer>> permute(int[] nums) {
-        ansList = new ArrayList<>(getMult(nums.length));
+        int mult = getMult(nums.length);
+        ansList = new ArrayList<>(mult);
+        map = new HashMap<>(mult);
         dfs(0,nums);
         return ansList;
     }
@@ -15,11 +20,14 @@ public class Mpermute {
         if(k == nums.length){
             List<Integer> tempList = new ArrayList<>(nums.length);
             for(int i = 0;i<nums.length;++i){
-              /*  System.out.print(nums[i]);*/
                 tempList.add(nums[i]);
             }
-/*            System.out.println();*/
-            ansList.add(tempList);
+            String temp = getTemp(tempList);
+            if(!map.containsKey(temp)){
+                ansList.add(tempList);
+                map.put(temp,true);
+            }
+
         }
         for(int i = k;i<nums.length;++i){
             swap(i,k,nums);
@@ -27,6 +35,16 @@ public class Mpermute {
             swap(i,k,nums);
         }
     }
+
+    private String getTemp(List<Integer> tempList) {
+        StringBuilder sb = new StringBuilder();
+        for(Integer num : tempList){
+            sb.append(num);
+            sb.append(",");
+        }
+        return sb.toString();
+    }
+
     private void swap(int i,int j,int[] nums){
         if(i == j)
             return;
@@ -43,6 +61,6 @@ public class Mpermute {
     }
     public static void main(String[] args){  
         Mpermute p = new Mpermute();
-        p.permute(new int[]{1,2,3,4,5});
+        System.out.println(p.permute(new int[]{1,1,2}));
     }
 }
