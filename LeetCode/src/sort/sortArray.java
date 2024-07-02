@@ -80,5 +80,30 @@ public class sortArray {
         arr[i] = arr[j];
         arr[j] = temp;
     }
+    int [] temp ;
+    public void mergeSort(int[] arr,int l,int r){
+        if(l >= r)
+            return;
+        int mid = l + (r - l)/2;
+        mergeSort(arr,l,mid);
+        mergeSort(arr,mid + 1,r);
+        int i = l;
+        int j = mid + 1;
+        int cnt = 0;
+        while (i <= mid && j <= r){
+            if(arr[i] <= arr[j])
+                temp[cnt++] = arr[i++];
+            else {
+                temp[cnt++] = arr[j++];
+            }
+        }
+        while (i <= mid)
+            temp[cnt++] = arr[i++];
+        while (j <= r)
+            temp[cnt++] = arr[j++];
+        for(int k =0;k < r - l + 1;++k){
+            arr[k + l]= temp[k];
+        }
+    }
 
 }
