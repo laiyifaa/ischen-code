@@ -9,8 +9,6 @@ public class sortArray {
         quickSort(nums,0,nums.length - 1);
         return nums;
     }
-
-
     private void quickSort(int[] nums, int l, int r) {
         if(l < r){
             int p = partition(nums,l,r);
@@ -89,7 +87,7 @@ public class sortArray {
         mergeSort(arr,mid + 1,r);
         int i = l;
         int j = mid + 1;
-        int cnt = 0;
+        int cnt = l;
         while (i <= mid && j <= r){
             if(arr[i] <= arr[j])
                 temp[cnt++] = arr[i++];
