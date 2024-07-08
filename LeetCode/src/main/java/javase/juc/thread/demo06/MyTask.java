@@ -1,4 +1,4 @@
-package javase.juc.demo.demo06;
+package javase.juc.thread.demo06;
 
 public class MyTask implements Runnable {
     //用户姓名

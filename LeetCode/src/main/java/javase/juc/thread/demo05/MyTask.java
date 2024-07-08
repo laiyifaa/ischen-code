@@ -1,4 +1,4 @@
-package javase.juc.demo.demo05;
+package javase.juc.thread.demo05;
 /*
     任务类:
         包含了商品数量,客户名称,送手机的行为;

@@ -1,4 +1,4 @@
-package javase.juc.demo.demo05;
+package javase.juc.thread.demo05;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;

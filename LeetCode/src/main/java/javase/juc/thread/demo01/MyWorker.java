@@ -1,4 +1,4 @@
-package javase.juc.demo.demo01;
+package javase.juc.thread.demo01;
 
 import java.util.List;
 

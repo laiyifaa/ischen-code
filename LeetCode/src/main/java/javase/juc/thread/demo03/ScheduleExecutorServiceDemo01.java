@@ -1,4 +1,4 @@
-package javase.juc.demo.demo03;
+package javase.juc.thread.demo03;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;

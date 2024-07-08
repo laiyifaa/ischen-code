@@ -1,4 +1,4 @@
-package javase.juc.demo.demo03;
+package javase.juc.thread.demo03;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
@@ -8,10 +8,10 @@ import java.util.concurrent.TimeUnit;
 /*
     测试ScheduleExecutorService接口中延迟执行任务和重复执行任务的功能
  */
-public class ScheduleExecutorServiceDemo02 {
+public class ScheduleExecutorServiceDemo03 {
     public static void main(String[] args) {
         //1:获取一个具备延迟执行任务的线程池对象
-        ScheduledExecutorService es = Executors.newScheduledThreadPool(3, new ThreadFactory() {
+        ScheduledExecutorService es = Executors.newSingleThreadScheduledExecutor( new ThreadFactory() {
             int n = 1;
             @Override
             public Thread newThread(Runnable r) {
@@ -19,15 +19,15 @@ public class ScheduleExecutorServiceDemo02 {
             }
         });
         //2:创建多个任务对象,提交任务,每个任务延迟2秒执行
-         es.scheduleAtFixedRate(new MyRunnable2(1),1,2,TimeUnit.SECONDS);
+         es.scheduleWithFixedDelay(new MyRunnable3(1),1,2,TimeUnit.SECONDS);
         System.out.println("over");
     }
 }
 
-class MyRunnable2 implements Runnable{
+class MyRunnable3 implements Runnable{
     private int id;
 
-    public MyRunnable2(int id) {
+    public MyRunnable3(int id) {
         this.id = id;
     }
 
@@ -35,7 +35,7 @@ class MyRunnable2 implements Runnable{
     public void run() {
         String name = Thread.currentThread().getName();
         try {
-            Thread.sleep(1500);
+            Thread.sleep(2000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

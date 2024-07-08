@@ -1,4 +1,4 @@
-package javase.juc.demo.demo01;
+package javase.juc.thread.demo01;
 /*
     需求:
         自定义线程池练习,这是任务类,需要实现Runnable;
