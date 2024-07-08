@@ -11,7 +11,7 @@ public class MyTest {
         //2: 提交多个任务
         for (int i = 0; i <30 ; i++) {
             //3:创建任务对象,并提交给线程池
-            javase.juc.demo.demo01.MyTask my = new javase.juc.demo.demo01.MyTask(i);
+            MyTask my = new MyTask(i);
             pool.submit(my);
         }
     }

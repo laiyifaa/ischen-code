@@ -24,7 +24,7 @@ public class Reactor implements Closeable, Runnable{
             serverChannel.bind(new InetSocketAddress(8080));
             serverChannel.configureBlocking(false);
             //注册时，将Acceptor作为附加对象存放，当选择器选择后也可以获取到
-            serverChannel.register(selector, SelectionKey.OP_ACCEPT, new Acceptor(serverChannel, selector));
+            //serverChannel.register(selector, SelectionKey.OP_ACCEPT, new Acceptor(serverChannel, selector));
             while (true) {
                 int count = selector.select();
                 System.out.println("监听到 "+count+" 个事件");
