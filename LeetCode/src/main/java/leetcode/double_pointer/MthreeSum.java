@@ -11,6 +11,7 @@ public class MthreeSum {
         list.add(c);
         return list;
     }
+    //15三数之和
     public List<List<Integer>> threeSum(int[] nums) {
         List<List<Integer>> ans = new ArrayList<>(nums.length-2);
         Arrays.sort(nums);

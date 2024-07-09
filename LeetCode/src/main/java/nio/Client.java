@@ -1,8 +1,6 @@
-package netty;
+package nio;
 
-
-
-import java.io.IOException;
+import java.io.*;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
 import java.nio.channels.SocketChannel;
@@ -17,7 +15,6 @@ public class Client {
             while (true) {   //咱给它套个无限循环，这样就能一直发消息了
                 System.out.println("请输入要发送给服务端的内容：");
                 String text = scanner.nextLine();
-                if(text.isEmpty()) continue;
                 //直接向通道中写入数据，真舒服
                 channel.write(ByteBuffer.wrap(text.getBytes()));
                 System.out.println("已发送！");
