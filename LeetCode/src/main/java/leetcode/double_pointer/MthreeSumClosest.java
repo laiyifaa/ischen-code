@@ -1,8 +1,8 @@
 package leetcode.double_pointer;
 
-import java.util.ArrayList;
+
 import java.util.Arrays;
-import java.util.List;
+
 
 public class MthreeSumClosest {
 

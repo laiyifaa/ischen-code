@@ -169,10 +169,10 @@ LCS:最长公共子序列
                 }
             }
             --完全背包 -每个物品无穷多个
+            dp[0]=1
             for(int i = 1;i<=n;++i){
                 for(int j = w[i];j<=m;++j){
-                     if(j >= w[i])
-                     dp[j] = max(dp[j],[j - w[i]] + c[i])
+                     dp[j] =  dp[j] + dp[j - w[i]];
                 }
             }
             --多重背包 -每个物品有限个
