@@ -3,24 +3,18 @@
         xmlns="http://ch.qos.logback/xml/ns/logback"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://ch.qos.logback/xml/ns/logback logback.xsd">
+    <!-- 输出控制，格式控制-->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <!--%date{HH:mm:ss.SSS} %c -->
-            <pattern>%date{HH:mm:ss.SSS} %c [%t] - %m%n</pattern>
+            <pattern>%date{HH:mm:ss} [%-5level] [%thread] %logger{17} - %m%n </pattern>
         </encoder>
     </appender>
-
-    <!--<logger name="org.springframework.security.web.FilterChainProxy" level="DEBUG" additivity="false">
+    <!-- 用来控制查看那个类的日志内容（对mybatis name 代表命名空间） -->
+    <logger name="**" level="DEBUG" additivity="false">
         <appender-ref ref="STDOUT"/>
     </logger>
-    <logger name="org.springframework.security.web.access.intercept.FilterSecurityInterceptor" level="DEBUG" additivity="false">
-        <appender-ref ref="STDOUT"/>
-    </logger>-->
 
-    <!--<logger name="org.springframework.security.web" level="DEBUG" additivity="false">
-        <appender-ref ref="STDOUT"/>
-    </logger>-->
-    <logger name="c" level="debug" additivity="false">
+    <logger name="io.netty.handler.logging.LoggingHandler" level="DEBUG" additivity="false">
         <appender-ref ref="STDOUT"/>
     </logger>
 
