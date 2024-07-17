@@ -1,4 +1,4 @@
-package netty;
+package nio.practice.netty;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
