@@ -1,4 +1,4 @@
-package sort;
+package algorithm;
 
 public class sortArray {
     //912. 排序数组
