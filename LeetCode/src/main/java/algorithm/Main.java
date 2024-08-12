@@ -9,7 +9,8 @@ public class Main{
         Scanner sc = new Scanner(System.in);
 
         while(sc.hasNext()){
-
+            String c = sc.nextLine();
+            System.out.println(c);
             int a = sc.nextInt();
 
             int b = sc.nextInt();
