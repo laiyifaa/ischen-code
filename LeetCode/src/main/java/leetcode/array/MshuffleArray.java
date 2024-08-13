@@ -10,6 +10,7 @@ public class MshuffleArray {
     int[] nums;
     int[] original;
 
+    //384. 打乱数组
     public MshuffleArray(int[] nums) {
         this.nums = nums;
         this.original = new int[nums.length];
