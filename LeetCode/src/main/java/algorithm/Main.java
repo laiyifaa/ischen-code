@@ -1,6 +1,6 @@
 package algorithm;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class Main{
 
@@ -14,7 +14,7 @@ public class Main{
             int a = sc.nextInt();
 
             int b = sc.nextInt();
-
+            System.out.printf("%02d",a);
             System.out.println(a+b);
 
         }
