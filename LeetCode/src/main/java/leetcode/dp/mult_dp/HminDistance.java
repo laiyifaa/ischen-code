@@ -2,6 +2,7 @@ package leetcode.dp.mult_dp;
 
 public class HminDistance {
 
+    //72. 编辑距离
     public int minDistance(String word1, String word2) {
         if(null == word1 || null == word2)
             return 0;
@@ -27,5 +28,10 @@ public class HminDistance {
             }
         }
         return dp[word1.length()][word2.length()];
+    }
+    public static void main(String[] args){
+        HminDistance q = new HminDistance();
+        System.out.println(q.minDistance("AACGT","ACCGGT"));
+
     }
 }
