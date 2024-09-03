@@ -6,6 +6,7 @@ import java.util.Map;
 
 public class McanMeasureWater {
 
+    //烧水壶
     public boolean canMeasureWater(int x, int y, int target) {
         LinkedList<Integer[]> queue = new LinkedList<>();
         queue.addLast(new Integer[]{0,0});

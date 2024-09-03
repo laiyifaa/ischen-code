@@ -1,5 +1,6 @@
 package leetcode.binaryTree;
 
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -36,6 +37,7 @@ public class MlevelOrder {
                 levelK = 0;
             }
         }
+        //Collections.reverse(ans);
         return ans;
     }
     public static void main(String[] args){  
