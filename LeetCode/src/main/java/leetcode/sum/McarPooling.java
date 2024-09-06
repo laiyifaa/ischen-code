@@ -4,6 +4,7 @@ public class McarPooling {
 
     //1094. 拼车
     //差分
+    //开一个数组记录变化，最后一次遍历计算变化
     public boolean carPooling(int[][] trips, int capacity) {
         if(capacity == 0 || null == trips || trips.length == 0)
             return true;
