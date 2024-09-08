@@ -8,6 +8,7 @@ import java.util.List;
 public class MfindCheapestPrice {
 
     //787. K 站中转内最便宜的航班
+    //bfs + 标记最小数组实现 k次中转最短路
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
         if(n == 0 || flights.length == 0)
             return 0;
