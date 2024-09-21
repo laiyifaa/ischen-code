@@ -2,7 +2,7 @@ package leetcode.array;
 
 import java.util.Arrays;
 
-public class MwiggleSortII {
+public class MIsChen_wiggleSortII {
 
 
     //324.摆动排序II
@@ -82,10 +82,5 @@ public class MwiggleSortII {
         nums[l] = temp;
         return l;
     }
-    public static void main(String[] args){
-        MwiggleSortII q = new MwiggleSortII();
-        q.wiggleSort(new int[]{
-                1
-        });
-    }
+
 }
