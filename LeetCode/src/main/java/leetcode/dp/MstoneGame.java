@@ -1,10 +1,10 @@
 package leetcode.dp;
 
-public class MpredictTheWinner {
+public class MstoneGame {
 
-    //486. 预测赢家
+    //877. 石子游戏
     //区间dp
-    public boolean predictTheWinner(int[] nums) {
+    public boolean stoneGame(int[] nums) {
         int[][] dp = new int[nums.length][nums.length];
         for(int i = 0 ;i < nums.length; ++i){
             dp[i][i] = nums[i];
@@ -15,11 +15,5 @@ public class MpredictTheWinner {
             }
         }
         return dp[0][nums.length - 1] >= 0;
-    }
-    public static void main(String[] args){
-        MpredictTheWinner q = new MpredictTheWinner();
-        System.out.println(q.predictTheWinner(new int[]{
-                1,5,233,7
-        }));
     }
 }
